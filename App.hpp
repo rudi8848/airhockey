@@ -1,18 +1,23 @@
 #ifndef APP_H
 #define APP_H
 
-#include <SDL2/SDL.h>
+#include <iostream>
+
+//#include <SDL2/SDL.h>
+#include "Event.hpp"
 #include "Surface.hpp"
 #include "defines.hpp"
 
 
-class App
+class App : public Event
 {
     public:
         App();
         virtual ~App();
 
         int onExecute();
+        virtual void onEvent(SDL_Event *e);
+        virtual void onExit();
 
     private:
         bool    _running;
@@ -22,7 +27,6 @@ class App
         SDL_Surface*    background;
 
         bool onInit();
-        void onEvent(SDL_Event* e);
         void onLoop();
         void onRender();
         void onQuit();
