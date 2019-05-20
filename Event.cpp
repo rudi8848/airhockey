@@ -165,10 +165,38 @@ void Event::onEvent(SDL_Event *e)
             }
             break;
         }
-
+        /*   Joystick   */
+        case SDL_JOYAXISMOTION:
+        {
+            onJoyAxis(e->jaxis.which, e->jaxis.axis, e->jaxis.value);
+            break;
+        }
+        case SDL_JOYBALLMOTION:
+        {
+            onJoyBallMotion(e->jball.which, e->jball.ball, e->jball.xrel, e->jball.yrel);
+            break;
+        }
+        case SDL_JOYHATMOTION:
+        {
+            onJoyHatMotion(e->jhat.which, e->jhat.hat, e->jhat.value);
+            break;
+        }
+        case SDL_JOYBUTTONDOWN:
+        {
+            onJoyButtonDown(e->jbutton.which, e->jbutton.button);
+            break;
+        }
+        case SDL_JOYBUTTONUP:
+        {
+            onJoyButtonDown(e->jbutton.which, e->jbutton.button);
+            break;
+        }
 
         default:
+        {
+            onUser(e->user.type, e->user.code, e->user.data1, e->user.data2);
             break;
+        }
     }
 }
 
@@ -295,6 +323,36 @@ void Event::onInputFocus()
 }
 
 void Event::onInputFocusLost()
+{
+
+}
+
+void Event::onJoyAxis(Uint8 which, Uint8 axis, Sint16 value)
+{
+
+}
+
+void Event::onJoyBallMotion(Uint8 which, Uint8 axis, Sint16 xrel, Sint16 yrel)
+{
+
+}
+
+void Event::onJoyHatMotion(Uint8 which, Uint8 hat, Uint8 button)
+{
+
+}
+
+void Event::onJoyButtonDown(Uint8 which, Uint8 button)
+{
+
+}
+
+void Event::onJoyButtonUp(Uint8 which, Uint8 button)
+{
+
+}
+
+void Event::onUser(Uint8 type, int code, void *data1, void *data2)
 {
 
 }

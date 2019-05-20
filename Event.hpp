@@ -38,6 +38,13 @@ class Event
     virtual void onWindowRestored();
     virtual void onInputFocus();
     virtual void onInputFocusLost();
+    /*  Joystick events   */
+    virtual void onJoyAxis(Uint8 which, Uint8 axis, Sint16 value);
+    virtual void onJoyBallMotion(Uint8 which, Uint8 axis, Sint16 xrel, Sint16 yrel);
+    virtual void onJoyHatMotion(Uint8 which, Uint8 hat, Uint8 button);
+    virtual void onJoyButtonDown(Uint8 which, Uint8 button);
+    virtual void onJoyButtonUp(Uint8 which, Uint8 button);
+    virtual void onUser(Uint8 type, int code, void *data1, void *data2);
 
     private:
 
