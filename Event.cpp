@@ -14,6 +14,7 @@ void Event::onEvent(SDL_Event *e)
 {
     switch(e->type)
     {
+        /*  keyboard events   */
         case SDL_QUIT:
         {
             onExit();
@@ -29,6 +30,7 @@ void Event::onEvent(SDL_Event *e)
             onKeyUp(e->key.keysym.sym, e->key.keysym.mod, e->key.keysym.scancode);
             break;
         }
+        /*  mouse events   */
         case SDL_MOUSEBUTTONDOWN:
         {
             switch (e->button.button)
@@ -54,6 +56,56 @@ void Event::onEvent(SDL_Event *e)
         case SDL_MOUSEMOTION:
         {
             onMouseMove(e->motion.x, e->motion.y, e->motion.xrel, e->motion.yrel, (e->motion.state&SDL_BUTTON(SDL_BUTTON_LEFT)) != 0,(e->motion.state&SDL_BUTTON(SDL_BUTTON_RIGHT)) != 0,(e->motion.state&SDL_BUTTON(SDL_BUTTON_MIDDLE)) != 0 );
+            break;
+        }
+        case SDL_MOUSEBUTTONUP:
+        {
+            switch (e->button.button)
+            {
+                case SDL_BUTTON_LEFT:
+                {
+                    onLButtonUp(e->button.x, e->button.y);
+                    break;
+                }
+                case SDL_BUTTON_RIGHT:
+                {
+                    onRButtonUp(e->button.x, e->button.y);
+                    break;
+                }
+                case SDL_BUTTON_MIDDLE:
+                {
+                    onMButtonUp(e->button.x, e->button.y);
+                    break;
+                }
+            }
+            break;
+        }
+        /*  window events   */
+        case SDL_WINDOWEVENT:
+        {
+            switch(e->window.event)
+            {
+                case SDL_WINDOW_SHOWN:
+                {
+                    onWindowShown(e->window.windowID);
+                    break;
+                }
+                case SDL_WINDOWEVENT_HIDDEN:
+                {
+                    onWindowHidden(e->window.windowID);
+                    break;
+                }
+                case SDL_WINDOWEVENT_RESIZED:
+                {
+                    onWindowResize(e->window.windowID, e->window.data1, e->window.data2);
+                    break;
+                }
+                case SDL_WINDOWEVENT_SIZE_CHANGED:
+                {
+                    onWindowSizeChanged(e->window.windowID, e->window.data1, e->window.data2);
+                    break;
+                }
+            }
             break;
         }
 
@@ -100,6 +152,40 @@ void Event::onMButtonDown(int xm, int ym)
 }
 
 void Event::onMouseMove(int xm, int ym, int relx, int rely, bool left, bool right, bool middle)
+{
+
+}
+
+void Event::onLButtonUp(int xm, int ym)
+{
+
+}
+
+void Event::onRButtonUp(int xm, int ym)
+{
+
+}
+
+void Event::onMButtonUp(int xm, int ym)
+{
+
+}
+
+void Event::onWindowShown(int winId)
+{
+
+}
+
+void Event::onWindowHidden(int winId)
+{
+
+}
+
+void Event::onWindowResize(int winId, int data1, int data2)
+{
+
+}
+void Event::onWindowSizeChanged(int winId, int data1, int data2)
 {
 
 }
