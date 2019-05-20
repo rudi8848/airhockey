@@ -552,7 +552,7 @@
 1558337872 source:/home/user/airhockey/App_onQuit.cpp
 	"App.hpp"
 
-1558337872 source:/home/user/airhockey/App_onRender.cpp
+1558361419 source:/home/user/airhockey/App_onRender.cpp
 	"App.hpp"
 
 1558346237 source:/home/user/airhockey/main.cpp
@@ -561,6 +561,9 @@
 1558337872 source:/home/user/airhockey/Surface.cpp
 	"Surface.hpp"
 
-1558358055 /home/user/airhockey/Event.hpp
+1558361271 /home/user/airhockey/Event.hpp
 	<SDL2/SDL.h>
+
+1558361271 source:/home/user/airhockey/Event.cpp
+	"Event.hpp"
 
