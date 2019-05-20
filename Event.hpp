@@ -28,6 +28,16 @@ class Event
     virtual void onWindowHidden(int winId);
     virtual void onWindowResize(int winId, int data1, int data2);
     virtual void onWindowSizeChanged(int winId, int data1, int data2);
+    virtual void onMouseEnter();
+    virtual void onMouseLeave();
+    virtual void onWindowExposed();
+    virtual void onWindowMove(int winId, int data1, int data2);
+    virtual void onWindowMinimize(int winId, int data1, int data2);
+    virtual void onWindowMaximize(int winId, int data1, int data2);
+    virtual void onTakeFocus();
+    virtual void onWindowRestored();
+    virtual void onInputFocus();
+    virtual void onInputFocusLost();
 
     private:
 

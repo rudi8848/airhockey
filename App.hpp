@@ -18,6 +18,7 @@ class App : public Event
         int onExecute();
         virtual void onEvent(SDL_Event *e);
         virtual void onExit();
+        virtual void onWindowExposed();
 
     private:
         bool    _running;

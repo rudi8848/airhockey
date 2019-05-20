@@ -85,7 +85,7 @@ void Event::onEvent(SDL_Event *e)
         {
             switch(e->window.event)
             {
-                case SDL_WINDOW_SHOWN:
+                case SDL_WINDOWEVENT_SHOWN:
                 {
                     onWindowShown(e->window.windowID);
                     break;
@@ -105,9 +105,67 @@ void Event::onEvent(SDL_Event *e)
                     onWindowSizeChanged(e->window.windowID, e->window.data1, e->window.data2);
                     break;
                 }
+                case SDL_WINDOWEVENT_ENTER:
+                {
+                    onMouseEnter();
+                    break;
+                }
+                case SDL_WINDOWEVENT_LEAVE:
+                {
+                    onMouseLeave();
+                    break;
+                }
+                case SDL_WINDOWEVENT_EXPOSED:
+                {
+                    onWindowExposed();
+                    break;
+                }
+                case SDL_WINDOWEVENT_MOVED:
+                {
+                    onWindowMove(e->window.windowID, e->window.data1, e->window.data2);
+                    break;
+                }
+                case SDL_WINDOWEVENT_MINIMIZED:
+                {
+                    onWindowMinimize(e->window.windowID, e->window.data1, e->window.data2);
+                    break;
+                }
+                case SDL_WINDOWEVENT_MAXIMIZED:
+                {
+                    onWindowMaximize(e->window.windowID, e->window.data1, e->window.data2);
+                    break;
+                }
+                case SDL_WINDOWEVENT_CLOSE:
+                {
+                    e->type = SDL_QUIT;
+                    SDL_PushEvent(e);
+                    break;
+                }
+                case SDL_WINDOWEVENT_TAKE_FOCUS:
+                {
+                    onTakeFocus();
+                    break;
+                }
+                case SDL_WINDOWEVENT_RESTORED:
+                {
+                    onWindowRestored();
+                    break;
+                }
+                case SDL_WINDOWEVENT_FOCUS_GAINED:
+                {
+                    onInputFocus();
+                    break;
+                }
+                case SDL_WINDOWEVENT_FOCUS_LOST:
+                {
+                    onInputFocusLost();
+                    break;
+                }
+
             }
             break;
         }
+
 
         default:
             break;
@@ -181,11 +239,62 @@ void Event::onWindowHidden(int winId)
 
 }
 
+void Event::onWindowRestored()
+{
+
+}
+
 void Event::onWindowResize(int winId, int data1, int data2)
 {
 
 }
 void Event::onWindowSizeChanged(int winId, int data1, int data2)
+{
+
+}
+
+void Event::onMouseEnter()
+{
+
+}
+
+void Event::onMouseLeave()
+{
+
+}
+
+void Event::onWindowExposed()
+{
+
+}
+
+
+void Event::onWindowMove(int winId, int data1, int data2)
+{
+
+}
+
+void Event::onWindowMinimize(int winId, int data1, int data2)
+{
+
+}
+
+void Event::onWindowMaximize(int winId, int data1, int data2)
+{
+
+}
+
+void Event::onTakeFocus()
+{
+
+}
+
+void Event::onInputFocus()
+{
+
+}
+
+void Event::onInputFocusLost()
 {
 
 }

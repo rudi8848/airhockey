@@ -26,7 +26,7 @@ int App::onExecute()
         {
             onEvent(&e);
         }
-        onRender();
+        //onRender();
         onLoop();
     }
 

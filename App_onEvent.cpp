@@ -9,3 +9,8 @@ void App::onExit()
 {
     _running = false;
 }
+
+void App::onWindowExposed()
+{
+    onRender();
+}
