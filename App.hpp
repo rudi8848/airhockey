@@ -7,6 +7,7 @@
 #include "Event.hpp"
 #include "Surface.hpp"
 #include "defines.hpp"
+#include "Player.hpp"
 
 
 class App : public Event
@@ -26,8 +27,12 @@ class App : public Event
         SDL_Window*     window;
         SDL_Surface*    screen;
         SDL_Surface*    background;
-        SDL_Surface*    player_x;
-        SDL_Surface*    player_y;
+
+        Player*         player;
+        Player*         enemy;
+        //SDL_Surface*    player_x;
+        //SDL_Surface*    player_y;
+        SDL_Surface*    puck;
 
         bool onInit();
         void onLoop();

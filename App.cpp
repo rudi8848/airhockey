@@ -6,8 +6,13 @@ App::App()
     window = nullptr;
     screen = nullptr;
     background = nullptr;
-    player_x = nullptr;
-    player_y = nullptr;
+    //player_x = nullptr;
+    //player_y = nullptr;
+
+    player = nullptr;
+    enemy = nullptr;
+
+    puck = nullptr;
 }
 
 App::~App()
@@ -28,7 +33,7 @@ int App::onExecute()
         {
             onEvent(&e);
         }
-        //onRender();
+        onRender();
         onLoop();
     }
 

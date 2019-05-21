@@ -23,12 +23,17 @@ bool App::onInit()
     }
     SDL_SetSurfaceRLE(screen, 1);
     background = Surface::loadSurface("Backgrounds/backGame.bmp",screen);
-    player_x = Surface::loadSurface("Backgrounds/player1.bmp",screen);
-    player_y = Surface::loadSurface("Backgrounds/player2.bmp",screen);
-    if (!background || !player_x || !player_y)
+    //player_x = Surface::loadSurface("Backgrounds/player1.bmp",screen);
+    //player_y = Surface::loadSurface("Backgrounds/player2.bmp",screen);
+    puck = Surface::loadSurface("Backgrounds/puck.bmp",screen);
+    if (!background || /*!player_x || !player_y ||*/ !puck)
     {
         std::cerr << "SDL2 error: " << SDL_GetError() << std::endl;
         return false;
     }
+
+    player = new Player("Backgrounds/player1.bmp");
+    if (!player->init(screen))
+        return false;
     return true;
 }
