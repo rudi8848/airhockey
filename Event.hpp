@@ -46,6 +46,8 @@ class Event
     virtual void onJoyButtonUp(Uint8 which, Uint8 button);
     virtual void onUser(Uint8 type, int code, void *data1, void *data2);
 
+
+    virtual void move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
     private:
 
 };

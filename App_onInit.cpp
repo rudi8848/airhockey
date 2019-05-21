@@ -35,5 +35,8 @@ bool App::onInit()
     player = new Player("Backgrounds/player1.bmp");
     if (!player->init(screen))
         return false;
+    enemy = new Enemy("Backgrounds/player2.bmp");
+    if (!enemy->init(screen))
+        return false;
     return true;
 }

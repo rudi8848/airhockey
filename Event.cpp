@@ -207,6 +207,7 @@ void Event::onExit()
 
 void Event::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
+    
     switch(sym)
     {
         case SDLK_ESCAPE:
@@ -214,6 +215,8 @@ void Event::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
             onExit();
             break;
         }
+        default:
+            move(sym, mod, scancode);
     }
 }
 
@@ -355,4 +358,9 @@ void Event::onJoyButtonUp(Uint8 which, Uint8 button)
 void Event::onUser(Uint8 type, int code, void *data1, void *data2)
 {
 
+}
+
+void Event::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
+{
+    
 }

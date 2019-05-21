@@ -8,6 +8,7 @@
 #include "Surface.hpp"
 #include "defines.hpp"
 #include "Player.hpp"
+#include "Enemy.hpp"
 
 
 class App : public Event
@@ -21,6 +22,8 @@ class App : public Event
         virtual void onExit();
         virtual void onWindowExposed();
 
+        virtual void move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
+
     private:
         bool    _running;
 
@@ -29,7 +32,7 @@ class App : public Event
         SDL_Surface*    background;
 
         Player*         player;
-        Player*         enemy;
+        Enemy*          enemy;
         //SDL_Surface*    player_x;
         //SDL_Surface*    player_y;
         SDL_Surface*    puck;
@@ -38,6 +41,7 @@ class App : public Event
         void onLoop();
         void onRender();
         void onQuit();
+        bool checkScore();
 
 };
 
