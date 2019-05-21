@@ -103,7 +103,6 @@ void Player::goRight()
 
 void Player::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-	//std::cerr << __PRETTY_FUNCTION__ << std::endl;
 	switch(sym)
     {
         
