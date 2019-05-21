@@ -6,6 +6,8 @@ App::App()
     window = nullptr;
     screen = nullptr;
     background = nullptr;
+    player_x = nullptr;
+    player_y = nullptr;
 }
 
 App::~App()

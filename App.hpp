@@ -26,6 +26,8 @@ class App : public Event
         SDL_Window*     window;
         SDL_Surface*    screen;
         SDL_Surface*    background;
+        SDL_Surface*    player_x;
+        SDL_Surface*    player_y;
 
         bool onInit();
         void onLoop();

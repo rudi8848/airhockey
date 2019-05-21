@@ -3,9 +3,13 @@
 void App::onQuit()
 {
     SDL_FreeSurface(screen);
-    SDL_FreeSurface(background);
     screen = nullptr;
+    SDL_FreeSurface(background);
     background = nullptr;
+    SDL_FreeSurface(player_x);
+    player_x = nullptr;
+    SDL_FreeSurface(player_y);
+    player_y = nullptr;
 
     SDL_DestroyWindow(window);
     window = nullptr;
