@@ -1,7 +1,7 @@
 #ifndef SURFACE_H
 #define SURFACE_H
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 class Surface
 {

@@ -2,8 +2,8 @@
 #define APP_H
 
 #include <iostream>
-
-//#include <SDL2/SDL.h>
+#include <SDL_stdinc.h>
+#include <SDL_mixer.h>
 #include "Event.hpp"
 #include "Surface.hpp"
 #include "defines.hpp"
@@ -31,11 +31,15 @@ class App : public Event
         SDL_Surface*    screen;
         SDL_Surface*    background;
 
+
         Player*         player;
         Enemy*          enemy;
         //SDL_Surface*    player_x;
         //SDL_Surface*    player_y;
         SDL_Surface*    puck;
+
+        Mix_Music*  music;
+        Mix_Chunk*  hit;
 
         bool onInit();
         void onLoop();

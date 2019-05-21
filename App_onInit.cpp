@@ -38,5 +38,20 @@ bool App::onInit()
     enemy = new Enemy("Backgrounds/player2.bmp");
     if (!enemy->init(screen))
         return false;
+    
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+    {
+        std::cerr << Mix_GetError() << std::endl;
+        return false;
+    }
+
+    music = Mix_LoadMUS("Sounds/Unknown.mid");
+    if (!music)
+    {
+        std::cerr << Mix_GetError() << std::endl;
+        return false;
+    }
+    if (Mix_PlayMusic(music, -1) == -1)
+        std::cerr << Mix_GetError() << std::endl;
     return true;
 }

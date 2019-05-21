@@ -13,6 +13,8 @@ App::App()
     enemy = nullptr;
 
     puck = nullptr;
+    music = nullptr;
+    hit = nullptr;
 }
 
 App::~App()

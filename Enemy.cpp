@@ -20,7 +20,6 @@ void 	Enemy::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 
 void Enemy::goLeft()
 {
-	//if (this->_x > BORDER_WIDTH)
 	int x = this->getX();
 	if (x > WINDOW_WIDTH / 2 )
     {

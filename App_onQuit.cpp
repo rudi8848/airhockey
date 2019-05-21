@@ -18,5 +18,12 @@ void App::onQuit()
     SDL_DestroyWindow(window);
     window = nullptr;
 
+    Mix_FreeMusic(music);
+    music = nullptr;
+
+    //Mix_FreeChunk(hit);
+    //hit = nullptr;
+
+    Mix_Quit();
     SDL_Quit();
 }
