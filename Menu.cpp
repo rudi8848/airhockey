@@ -21,6 +21,11 @@ int Menu::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
             ret = EXIT;
             break;
         }
+        case SDLK_SPACE:
+        {
+            ret = PLAY;
+            break;
+        }
         default:
         {
             ret = STATE_NULL;

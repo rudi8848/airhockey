@@ -12,10 +12,16 @@ void App::updateState()
         {
             case MENU:
             {
+                new Menu(screen, WINDOW_WIDTH, WINDOW_HEIGHT);
+                room->loadBackground("Backgrounds/menuBack.png");
+                room->loadMusic("Sounds/Syntheticity.mid");
                 break;
             }
             case PLAY:
             {
+                room = new Match(screen, WINDOW_WIDTH, WINDOW_HEIGHT);
+                room->loadBackground("Backgrounds/backGame.bmp");
+                room->loadMusic("Sounds/Unknown.mid");
                 break;
             }
             case PAUSED:

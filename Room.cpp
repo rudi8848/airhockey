@@ -5,6 +5,7 @@ Room::Room(SDL_Surface* scr, int rwidth, int rheight)
 
     screen = scr;
     background = nullptr;
+    music = nullptr;
 
     camera.x = 0;
     camera.y = 0;
@@ -13,7 +14,6 @@ Room::Room(SDL_Surface* scr, int rwidth, int rheight)
 
     hspeed = 0;
     vspeed = 0;
-
 }
 
 Room::~Room()
@@ -23,6 +23,20 @@ Room::~Room()
         SDL_FreeSurface(background);
         background = nullptr;
     }
+    if (music)
+    {
+        Mix_FreeMusic(music);
+        music = nullptr;
+    }
+}
+
+void    Room::loadMusic(std::string const& fname)
+{
+    music = Mix_LoadMUS(fname.c_str());
+    if (!music)
+        throw InitError("Load Music Failed!");
+    if (Mix_PlayMusic(music, -1) == -1)
+        throw InitError("Playing music failed!");
 }
 
 int Room::onEvent(SDL_Event *e)

@@ -1,6 +1,7 @@
 #ifndef ROOM_H
 #define ROOM_H
 
+#include <SDL_mixer.h>
 #include "Event.hpp"
 #include "defines.hpp"
 #include "InitError.hpp"
@@ -12,6 +13,7 @@ class Room : Event
         Room(SDL_Surface* scr = nullptr, int rwidth = WINDOW_WIDTH, int rheight = WINDOW_HEIGHT);
         virtual ~Room();
 
+    virtual void loadMusic(std::string const& fname);
     virtual int onEvent(SDL_Event *e);
     virtual int onExit();
 
@@ -26,6 +28,7 @@ class Room : Event
     void setVSpeed(int spd);
 
     private:
+        Mix_Music *music;
         SDL_Surface *screen;
         SDL_Surface *background;
         SDL_Rect camera;

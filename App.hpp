@@ -3,6 +3,7 @@
 
 #include "Room.hpp"
 #include "Menu.hpp"
+#include "Match.hpp"
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 
