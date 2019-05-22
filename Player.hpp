@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "Surface.hpp"
+#include "InitError.hpp"
 //#include "Event.hpp"
 #include "defines.hpp"
 

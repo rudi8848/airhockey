@@ -2,6 +2,7 @@
 #define MATCH_H
 
 #include "Room.hpp"
+#include "Enemy.hpp"
 
 class Match: public Room
 {

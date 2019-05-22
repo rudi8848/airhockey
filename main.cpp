@@ -2,6 +2,7 @@
 
 int main(int argc, char *argv[])
 {
+
     try
     {
         App game;
@@ -9,6 +10,7 @@ int main(int argc, char *argv[])
     }
     catch (const InitError &err)
     {
-        std::cerr << "Error: " << err.what() << std::endl;
+        //std::cerr << "Error: " << err.what() << std::endl;
+        SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Air hockey error", err.what(), NULL);
     }
 }

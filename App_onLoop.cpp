@@ -2,5 +2,6 @@
 
 void App::onLoop()
 {
-    room->onLoop();
+    if (room)
+        room->onLoop();
 }

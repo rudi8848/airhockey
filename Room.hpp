@@ -27,6 +27,7 @@ class Room : Event
     void setHSpeed(int spd);
     void setVSpeed(int spd);
 
+    SDL_Surface *getScreen() const;
     private:
         Mix_Music *music;
         SDL_Surface *screen;

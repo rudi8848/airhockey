@@ -13,12 +13,10 @@ Player::~Player()
 
 bool Player::init(SDL_Surface *where)
 {
-	surface = Surface::loadSurface(_filename,where, 255, 0, 216);	// null check at App::onInit
+	//surface = Surface::loadSurface(_filename,where, 255, 0, 216);	// null check at App::onInit
+	surface = Surface::loadSurface(_filename,where);	// null check at App::onInit
 	if (!surface)
-	{
-		std::cerr << "Player init error: " << SDL_GetError() << std::endl;
-		return false;
-	}
+        throw InitError("Load Image Failed!");
 	initPosition();
 	score = 0;
 	return true;

@@ -102,3 +102,8 @@ void    Room::setVSpeed(int spd)
 {
     vspeed = spd;
 }
+
+SDL_Surface *Room::getScreen() const
+{
+    return this->screen;
+}
