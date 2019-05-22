@@ -2,14 +2,15 @@
 #define SURFACE_H
 
 #include <SDL.h>
+#include <iostream>
 
 class Surface
 {
     public:
     Surface();
     // image loading
-    static SDL_Surface* loadSurface(char *fname, SDL_Surface* screen);
-    static SDL_Surface* loadSurface(char *fname, SDL_Surface* screen, int r, int g, int b);
+    static SDL_Surface* loadSurface(std::string const& fname, SDL_Surface* screen);
+    static SDL_Surface* loadSurface(std::string const& fname, SDL_Surface* screen, int r, int g, int b);
     //rendering
     static void drawSurface(SDL_Surface* src,SDL_Surface* dst, SDL_Rect* clip, int x, int y);
     static void drawSurface(SDL_Surface* src,SDL_Surface* dst, int x, int y);

@@ -8,9 +8,9 @@
 class Player
 {
 public:
-	Player(char * filename);
+	Player(std::string const & filename);
 	~Player();
-	
+
 	virtual void 	initPosition();
 	void 	setPosition(int x, int y);
 	//std::pair <int,int>& getPosition();
@@ -32,7 +32,7 @@ public:
 		int _y;
 		SDL_Surface *surface;
 		unsigned score;
-		char *_filename;
+		std::string _filename;
 };
 
 #endif

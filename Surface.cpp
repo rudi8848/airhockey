@@ -4,9 +4,9 @@ Surface::Surface()
 {
 }
 
-SDL_Surface *Surface::loadSurface(char *fname, SDL_Surface* screen)
+SDL_Surface *Surface::loadSurface(std::string const & fname, SDL_Surface* screen)
 {
-    SDL_Surface* temp = SDL_LoadBMP(fname);
+    SDL_Surface* temp = SDL_LoadBMP(fname.c_str());
     if (!temp)
         return nullptr;
     SDL_Surface* newSurface = SDL_ConvertSurface(temp, screen->format, 0);
@@ -15,9 +15,9 @@ SDL_Surface *Surface::loadSurface(char *fname, SDL_Surface* screen)
     return newSurface;
 }
 
-SDL_Surface *Surface::loadSurface(char *fname, SDL_Surface* screen, int r, int g, int b)
+SDL_Surface *Surface::loadSurface(std::string const & fname, SDL_Surface* screen, int r, int g, int b)
 {
-    SDL_Surface* temp = SDL_LoadBMP(fname);
+    SDL_Surface* temp = SDL_LoadBMP(fname.c_str());
     if (!temp)
         return nullptr;
     SDL_Surface* newSurface = SDL_ConvertSurface(temp, screen->format, 0);

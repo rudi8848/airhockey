@@ -7,7 +7,7 @@
 class Enemy : public Player
 {
 public:
-	Enemy(char *filename) : Player(filename) {}
+	Enemy(std:: string const & filename) : Player(filename) {}
 	~Enemy() {}
 	virtual void 	initPosition();
 	virtual void 	move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
