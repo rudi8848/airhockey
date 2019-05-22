@@ -2,6 +2,13 @@
 
 int main(int argc, char *argv[])
 {
-    App game;
-    return game.onExecute();
+    try
+    {
+        App game;
+        return game.onExecute();
+    }
+    catch (const InitError &err)
+    {
+        std::cerr << "Error: " << err.what() << std::endl;
+    }
 }

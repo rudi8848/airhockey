@@ -10,4 +10,14 @@
 #define STRIKER_WIDTH	96
 #define BORDER_WIDTH	10
 
+typedef enum
+{
+    STATE_NULL,
+    MENU,
+    PLAY,
+    PAUSED,
+    EXIT,
+    STATES
+} e_state;
+
 #endif // DEFINES_H

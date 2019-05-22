@@ -10,24 +10,26 @@ Event::~Event()
 
 }
 
-void Event::onEvent(SDL_Event *e)
+int Event::onEvent(SDL_Event *e)
 {
+    int ret = 0;
+
     switch(e->type)
     {
         /*  keyboard events   */
         case SDL_QUIT:
         {
-            onExit();
+            ret = onExit();
             break;
         }
         case SDL_KEYDOWN:
         {
-            onKeyDown(e->key.keysym.sym, e->key.keysym.mod, e->key.keysym.scancode);
+            ret = onKeyDown(e->key.keysym.sym, e->key.keysym.mod, e->key.keysym.scancode);
             break;
         }
         case SDL_KEYUP:
         {
-            onKeyUp(e->key.keysym.sym, e->key.keysym.mod, e->key.keysym.scancode);
+            ret = onKeyUp(e->key.keysym.sym, e->key.keysym.mod, e->key.keysym.scancode);
             break;
         }
         /*  mouse events   */
@@ -198,31 +200,23 @@ void Event::onEvent(SDL_Event *e)
             break;
         }
     }
+    return ret;
 }
 
-void Event::onExit()
+int Event::onExit()
 {
-
+    return 0;
 }
 
-void Event::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
+int Event::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-    
-    switch(sym)
-    {
-        case SDLK_ESCAPE:
-        {
-            onExit();
-            break;
-        }
-        default:
-            move(sym, mod, scancode);
-    }
+
+    return 0;
 }
 
-void Event::onKeyUp(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
+int Event::onKeyUp(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-
+    return 0;
 }
 
 void Event::onLButtonDown(int xm, int ym)
@@ -362,5 +356,5 @@ void Event::onUser(Uint8 type, int code, void *data1, void *data2)
 
 void Event::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-    
+
 }

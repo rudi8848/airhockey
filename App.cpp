@@ -2,19 +2,11 @@
 
 App::App()
 {
-    _running = true;
+    id_state = STATE_NULL;
+    next_state = STATE_NULL;
     window = nullptr;
     screen = nullptr;
-    background = nullptr;
-    //player_x = nullptr;
-    //player_y = nullptr;
-
-    player = nullptr;
-    enemy = nullptr;
-
-    puck = nullptr;
-    music = nullptr;
-    hit = nullptr;
+    room = nullptr;
 }
 
 App::~App()
@@ -22,25 +14,27 @@ App::~App()
 
 }
 
-int App::onExecute()
+e_state App::onExecute()
 {
     if (onInit() == false)
-        return -1;
+        throw InitError("SDL Initialize failed!");
+
+    onStart();
 
     SDL_Event e;
 
-    while (_running)
+    while (id_state != EXIT)
     {
-        while (SDL_PollEvent(&e))
-        {
-            onEvent(&e);
-        }
-        onRender();
+
         onLoop();
+        onRender();
+
+        next_state = (e_state)room->onEvent(&e);
+        updateState();
     }
 
     onQuit();
-    return 0;
+    return STATE_NULL;
 }
 
 

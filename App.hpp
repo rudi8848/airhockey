@@ -2,51 +2,49 @@
 #define APP_H
 
 #include <iostream>
-//#include <SDL_stdinc.h>
+#include <SDL.h>
+#include "Room.hpp"
+#include "Menu.hpp"
 #include <SDL_mixer.h>
+#include <SDL_ttf.h>
 #include <SDL_image.h>
-#include "Event.hpp"
-#include "Surface.hpp"
-#include "defines.hpp"
-#include "Player.hpp"
-#include "Enemy.hpp"
 
 
-class App : public Event
+//#include "InitError.hpp"
+//#include "Surface.hpp"
+//#include "Event.hpp"
+//#include "defines.hpp"
+
+
+
+class App
 {
     public:
         App();
         virtual ~App();
 
-        int onExecute();
-        virtual void onEvent(SDL_Event *e);
-        virtual void onExit();
-        virtual void onWindowExposed();
+        e_state onExecute();
 
-        virtual void move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
+        virtual void onExit();
+
 
     private:
-        bool    _running;
+
+        e_state id_state;
+        e_state next_state;
 
         SDL_Window*     window;
         SDL_Surface*    screen;
-        SDL_Surface*    background;
 
+        Room *room;
 
-        Player*         player;
-        Enemy*          enemy;
-        //SDL_Surface*    player_x;
-        //SDL_Surface*    player_y;
-        SDL_Surface*    puck;
-
-        Mix_Music*  music;
-        Mix_Chunk*  hit;
-
+        void onStart();
         bool onInit();
         void onLoop();
         void onRender();
         void onQuit();
-        bool checkScore();
+        void updateState();
+        //bool checkScore();
 
 };
 

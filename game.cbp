@@ -43,17 +43,24 @@
 		</Linker>
 		<Unit filename="App.cpp" />
 		<Unit filename="App.hpp" />
-		<Unit filename="App_onEvent.cpp" />
 		<Unit filename="App_onInit.cpp" />
 		<Unit filename="App_onLoop.cpp" />
 		<Unit filename="App_onQuit.cpp" />
 		<Unit filename="App_onRender.cpp" />
+		<Unit filename="App_onStart.cpp" />
+		<Unit filename="App_updateState.cpp" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.hpp" />
 		<Unit filename="Event.cpp" />
 		<Unit filename="Event.hpp" />
+		<Unit filename="InitError.cpp" />
+		<Unit filename="InitError.hpp" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.hpp" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.hpp" />
+		<Unit filename="Room.cpp" />
+		<Unit filename="Room.hpp" />
 		<Unit filename="Surface.cpp" />
 		<Unit filename="Surface.hpp" />
 		<Unit filename="defines.hpp" />
