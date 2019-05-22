@@ -44,12 +44,12 @@ bool App::onInit()
         return false;
     }
 
-    //player = new Player("Backgrounds/player1.bmp");
-    player = new Player("Backgrounds/player1.png");
+    player = new Player("Backgrounds/player1.bmp");
+    //player = new Player("Backgrounds/player1.png");
     if (!player->init(screen))
         return false;
-    //enemy = new Enemy("Backgrounds/player2.bmp");
-    enemy = new Enemy("Backgrounds/player2.png");
+    enemy = new Enemy("Backgrounds/player2.bmp");
+    //enemy = new Enemy("Backgrounds/player2.png");
     if (!enemy->init(screen))
         return false;
 
