@@ -66,3 +66,22 @@ void Surface::clearSurface(SDL_Surface* screen, int r, int g, int b)
 {
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, r, g, b));
 }
+
+
+void Surface::drawTextSurface(TTF_Font *font, SDL_Surface* screen, std::string const & str, int x, int y, int r, int g, int b)
+{
+    if (!font || !screen)
+        return;
+    SDL_Color color = (r, g, b);
+
+    SDL_Rect rcDest;
+    rcDest.x = x;
+    rcDest.y = y;
+
+    SDL_Surface *txtSurface = TIFF_RenderText_Solid(font, str.c_str(), color);
+    if (!txtSurface)
+        return;
+    SDL_BlitSurface(txtSurface, NULL, screen, &rcDest);
+    SDL_FreeSurface(txtSurface);
+
+}
