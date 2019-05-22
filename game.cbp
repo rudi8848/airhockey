@@ -24,9 +24,11 @@
 					<Add option="-O2" />
 					<Add option="-std=c++11" />
 					<Add directory="/usr/include" />
+					<Add directory="/usr/include/SDL2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-lSDL2 -lSDL2_mixer" />
 					<Add directory="/usr/lib" />
 					<Add directory="/usr/lib/i386-linux-gnu" />
 				</Linker>
@@ -46,8 +48,12 @@
 		<Unit filename="App_onLoop.cpp" />
 		<Unit filename="App_onQuit.cpp" />
 		<Unit filename="App_onRender.cpp" />
+		<Unit filename="Enemy.cpp" />
+		<Unit filename="Enemy.hpp" />
 		<Unit filename="Event.cpp" />
 		<Unit filename="Event.hpp" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.hpp" />
 		<Unit filename="Surface.cpp" />
 		<Unit filename="Surface.hpp" />
 		<Unit filename="defines.hpp" />
