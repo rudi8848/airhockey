@@ -27,9 +27,15 @@ bool App::onInit()
     if ((initted & flags) != flags)
         return false;
     if (TTF_Init() == -1)
-    return false;
+        return false;
 
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048)  == -1)
         return false;
+
+   font = TTF_OpenFont("Fonts/CuteFont-Regular.ttf", 64);
+   if (!font)
+   {
+        return false;
+    }
     return true;
 }

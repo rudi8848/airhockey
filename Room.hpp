@@ -28,6 +28,12 @@ class Room : Event
     void setVSpeed(int spd);
 
     SDL_Surface *getScreen() const;
+    std::string text;
+    int text_x;
+    int text_y;
+    int r;
+    int g;
+    int b;
     private:
         Mix_Music *music;
         SDL_Surface *screen;

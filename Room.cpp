@@ -6,6 +6,7 @@ Room::Room(SDL_Surface* scr, int rwidth, int rheight)
     screen = scr;
     background = nullptr;
     music = nullptr;
+    text = "";
 
     camera.x = 0;
     camera.y = 0;
@@ -14,6 +15,12 @@ Room::Room(SDL_Surface* scr, int rwidth, int rheight)
 
     hspeed = 0;
     vspeed = 0;
+
+    text_x = 0;
+    text_y = 0;
+    r = 0;
+    g = 0;
+    b = 0;
 }
 
 Room::~Room()

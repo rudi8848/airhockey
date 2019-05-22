@@ -72,13 +72,14 @@ void Surface::drawTextSurface(TTF_Font *font, SDL_Surface* screen, std::string c
 {
     if (!font || !screen)
         return;
-    SDL_Color color = (r, g, b);
+        std::cerr << __PRETTY_FUNCTION__ << std::endl;
+    SDL_Color color = {r, g, b};
 
     SDL_Rect rcDest;
     rcDest.x = x;
     rcDest.y = y;
 
-    SDL_Surface *txtSurface = TIFF_RenderText_Solid(font, str.c_str(), color);
+    SDL_Surface *txtSurface = TTF_RenderText_Solid(font, str.c_str(), color);
     if (!txtSurface)
         return;
     SDL_BlitSurface(txtSurface, NULL, screen, &rcDest);

@@ -24,6 +24,8 @@ class App
         SDL_Window*     window;
         SDL_Surface*    screen;
 
+        TTF_Font *font;
+
         Room *room;
 
         void onStart();

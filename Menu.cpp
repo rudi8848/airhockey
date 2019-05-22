@@ -2,7 +2,12 @@
 
 Menu::Menu(SDL_Surface* scr, int rwidth, int rheight) : Room(scr, rwidth, rheight)
 {
-
+    this->text = "Press SPACE to play";
+    this->text_x = 120;
+    this->text_y = 400;
+    this->r = 255;
+    this->g = 255;
+    this->b = 255;
 }
 
 Menu::~Menu()

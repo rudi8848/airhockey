@@ -7,6 +7,7 @@ App::App()
     window = nullptr;
     screen = nullptr;
     room = nullptr;
+    font = nullptr;
 }
 
 App::~App()
@@ -20,12 +21,10 @@ e_state App::onExecute()
         throw InitError("SDL Initialize failed!");
 
     onStart();
-
     SDL_Event e;
 
     while (id_state != EXIT)
     {
-
         onLoop();
         onRender();
 

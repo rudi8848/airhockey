@@ -2,7 +2,12 @@
 
 Match::Match(SDL_Surface* scr, int rwidth, int rheight) : Room(scr, rwidth, rheight)
 {
-
+    this->text = "Score: ";
+    this->text_x = 120;
+    this->text_y = 30;
+    this->r = 255;
+    this->g = 0;
+    this->b = 0;
 }
 
 Match::~Match()
