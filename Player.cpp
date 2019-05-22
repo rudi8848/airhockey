@@ -105,7 +105,7 @@ void Player::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
 	switch(sym)
     {
-        
+
         case SDLK_UP:
         {
         	goUp();
@@ -118,7 +118,7 @@ void Player::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
         }
         case SDLK_LEFT:
         {
-        	goLeft();        	
+        	goLeft();
         	break;
         }
         case SDLK_RIGHT:

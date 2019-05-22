@@ -38,7 +38,7 @@ bool App::onInit()
     enemy = new Enemy("Backgrounds/player2.bmp");
     if (!enemy->init(screen))
         return false;
-    
+
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
     {
         std::cerr << Mix_GetError() << std::endl;
