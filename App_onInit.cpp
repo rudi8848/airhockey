@@ -19,7 +19,6 @@ bool App::onInit()
     screen = SDL_GetWindowSurface(window);
     if (!screen)
     {
-        std::cout << "SDL initialization error: " << SDL_GetError() << std::endl;
         return false;
     }
     SDL_SetSurfaceRLE(screen, 1);
@@ -30,7 +29,7 @@ bool App::onInit()
     if (TTF_Init() == -1)
     return false;
 
-    if (SDL_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048)  == -1)
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048)  == -1)
         return false;
     return true;
 }

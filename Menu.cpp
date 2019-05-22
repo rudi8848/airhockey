@@ -1,6 +1,6 @@
 #include "Menu.hpp"
 
-Menu::Menu(SDL_Surface* scr = nullptr, int rwidth = WINDOW_WIDTH, int rheight = WINDOW_HEIGHT) : Room(scr, rwidth, rheight)
+Menu::Menu(SDL_Surface* scr, int rwidth, int rheight) : Room(scr, rwidth, rheight)
 {
 
 }

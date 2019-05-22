@@ -18,5 +18,6 @@ void App::onQuit()
 
     Mix_Quit();
     IMG_Quit();
+    TTF_Quit();
     SDL_Quit();
 }

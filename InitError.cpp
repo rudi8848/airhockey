@@ -1,6 +1,6 @@
 #include "InitError.hpp"
 
-InitError::InitError() : ecxeption(), mes(SDL_GetError())
+InitError::InitError() : exception(), mes(SDL_GetError())
 {
 
 }

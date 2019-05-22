@@ -22,6 +22,8 @@ void App::updateState()
             {
                 break;
             }
+            default:
+                break;
         }
         id_state = next_state;
         next_state = STATE_NULL;

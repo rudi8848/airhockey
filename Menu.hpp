@@ -1,6 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include "Room.hpp"
+
 class Menu: public Room
 {
     public:
@@ -13,6 +15,6 @@ class Menu: public Room
 
     private:
 
-}
+};
 
 #endif // MENU_H

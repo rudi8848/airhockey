@@ -1,20 +1,10 @@
 #ifndef APP_H
 #define APP_H
 
-#include <iostream>
-#include <SDL.h>
 #include "Room.hpp"
 #include "Menu.hpp"
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
-#include <SDL_image.h>
-
-
-//#include "InitError.hpp"
-//#include "Surface.hpp"
-//#include "Event.hpp"
-//#include "defines.hpp"
-
 
 
 class App
@@ -24,9 +14,6 @@ class App
         virtual ~App();
 
         e_state onExecute();
-
-        virtual void onExit();
-
 
     private:
 
@@ -44,7 +31,6 @@ class App
         void onRender();
         void onQuit();
         void updateState();
-        //bool checkScore();
 
 };
 

@@ -39,7 +39,7 @@ int Room::onEvent(SDL_Event *e)
 
 int Room::onExit()
 {
-    return STATE_EXIT;
+    return EXIT;
 }
 
 void    Room::onLoop()
@@ -65,7 +65,7 @@ void    Room::move_camera(int lwidth)
 
 void    Room::loadBackground(std::string const& fname)
 {
-    background = Surface::loadSurface();
+    background = Surface::loadSurface(fname, screen);
 
     if (!background)
         throw InitError("Load Background Failed!");

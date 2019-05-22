@@ -20,7 +20,7 @@ class Room : Event
     virtual void onRender();
     virtual void move_camera(int lwidth);
 
-    void loadBackground(const char* fname);
+    void loadBackground(std::string const& fname);
     void setCamera(int left, int top, int right, int bottom);
     void setHSpeed(int spd);
     void setVSpeed(int spd);
