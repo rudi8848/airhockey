@@ -22,20 +22,34 @@ bool App::onInit()
         return false;
     }
     SDL_SetSurfaceRLE(screen, 1);
+
+    /*   Init PNG   */
+    int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
+    int innitted = IMG_Init(imgFlags);
+    if ((innitted & imgFlags) != imgFlags)
+    {
+        std::cerr << "SDL2 error: " << IMG_GetError() << std::endl;
+        return false;
+    }
+
+
     background = Surface::loadSurface("Backgrounds/backGame.bmp",screen);
     //player_x = Surface::loadSurface("Backgrounds/player1.bmp",screen);
     //player_y = Surface::loadSurface("Backgrounds/player2.bmp",screen);
-    puck = Surface::loadSurface("Backgrounds/puck.bmp",screen, 255, 0, 216);
+    //puck = Surface::loadSurface("Backgrounds/puck.bmp",screen, 255, 0, 216);
+    puck = Surface::loadSurface("Backgrounds/puck.png",screen);
     if (!background || /*!player_x || !player_y ||*/ !puck)
     {
         std::cerr << "SDL2 error: " << SDL_GetError() << std::endl;
         return false;
     }
 
-    player = new Player("Backgrounds/player1.bmp");
+    //player = new Player("Backgrounds/player1.bmp");
+    player = new Player("Backgrounds/player1.png");
     if (!player->init(screen))
         return false;
-    enemy = new Enemy("Backgrounds/player2.bmp");
+    //enemy = new Enemy("Backgrounds/player2.bmp");
+    enemy = new Enemy("Backgrounds/player2.png");
     if (!enemy->init(screen))
         return false;
 

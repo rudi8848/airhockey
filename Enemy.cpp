@@ -7,7 +7,7 @@ void 	Enemy::initPosition()
 
 void 	Enemy::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-	int rand = std::rand() % 4;
+	int rand = std::rand() % 3;
 	if (rand == 0)
 		goLeft();
 	else if (rand == 1)

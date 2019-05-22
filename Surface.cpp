@@ -6,11 +6,12 @@ Surface::Surface()
 
 SDL_Surface *Surface::loadSurface(std::string const & fname, SDL_Surface* screen)
 {
-    SDL_Surface* temp = SDL_LoadBMP(fname.c_str());
+    //SDL_Surface* temp = SDL_LoadBMP(fname.c_str());
+    SDL_Surface* temp = IMG_Load(fname.c_str());
     if (!temp)
         return nullptr;
     SDL_Surface* newSurface = SDL_ConvertSurface(temp, screen->format, 0);
-
+    SDL_SetColorKey(newSurface, SDL_RLEACCEL, SDL_MapRGB(newSurface->format, 0, 0, 0));
     SDL_FreeSurface(temp);
     return newSurface;
 }

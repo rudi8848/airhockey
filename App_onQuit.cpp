@@ -25,5 +25,6 @@ void App::onQuit()
     //hit = nullptr;
 
     Mix_Quit();
+    IMG_Quit();
     SDL_Quit();
 }

@@ -2,6 +2,7 @@
 #define SURFACE_H
 
 #include <SDL.h>
+#include <SDL_image.h>
 #include <iostream>
 
 class Surface

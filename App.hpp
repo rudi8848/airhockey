@@ -2,8 +2,9 @@
 #define APP_H
 
 #include <iostream>
-#include <SDL_stdinc.h>
+//#include <SDL_stdinc.h>
 #include <SDL_mixer.h>
+#include <SDL_image.h>
 #include "Event.hpp"
 #include "Surface.hpp"
 #include "defines.hpp"

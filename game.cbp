@@ -28,7 +28,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-lSDL2 -lSDL2_mixer" />
+					<Add option="-lSDL2 -lSDL2_mixer -lSDL2_image" />
 					<Add directory="/usr/lib" />
 					<Add directory="/usr/lib/i386-linux-gnu" />
 				</Linker>

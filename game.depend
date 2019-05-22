@@ -618,10 +618,10 @@
 1558501596 source:/home/rudi/airhockey/App.cpp
 	"App.hpp"
 
-1558501596 /home/rudi/airhockey/App.hpp
+1558513131 /home/rudi/airhockey/App.hpp
 	<iostream>
-	<SDL_stdinc.h>
 	<SDL_mixer.h>
+	<SDL_image.h>
 	"Event.hpp"
 	"Surface.hpp"
 	"defines.hpp"
@@ -631,8 +631,9 @@
 1558501596 /home/rudi/airhockey/Event.hpp
 	<SDL.h>
 
-1558512800 /home/rudi/airhockey/Surface.hpp
+1558513587 /home/rudi/airhockey/Surface.hpp
 	<SDL.h>
+	<SDL_image.h>
 	<iostream>
 
 1558501596 /home/rudi/airhockey/defines.hpp
@@ -641,13 +642,13 @@
 1558501596 source:/home/rudi/airhockey/App_onEvent.cpp
 	"App.hpp"
 
-1558512119 source:/home/rudi/airhockey/App_onInit.cpp
+1558514911 source:/home/rudi/airhockey/App_onInit.cpp
 	"App.hpp"
 
 1558255098 source:/home/rudi/airhockey/App_onLoop.cpp
 	"App.hpp"
 
-1558501596 source:/home/rudi/airhockey/App_onQuit.cpp
+1558513798 source:/home/rudi/airhockey/App_onQuit.cpp
 	"App.hpp"
 
 1558507380 source:/home/rudi/airhockey/App_onRender.cpp
@@ -659,7 +660,7 @@
 1558375464 source:/home/rudi/airhockey/main.cpp
 	"App.hpp"
 
-1558285736 source:/home/rudi/airhockey/Surface.cpp
+1558514776 source:/home/rudi/airhockey/Surface.cpp
 	"Surface.hpp"
 
 1558512662 /home/rudi/airhockey/Player.hpp
@@ -682,6 +683,12 @@
 1558501596 source:/home/rudi/airhockey/Enemy.cpp
 	"Enemy.hpp"
 
-1558512023 source:/home/rudi/airhockey/Player.cpp
+1558514829 source:/home/rudi/airhockey/Player.cpp
 	"Player.hpp"
+
+1520175005 /usr/include/SDL2/SDL_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
 
