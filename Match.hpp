@@ -14,6 +14,11 @@ class Match: public Room
         virtual int onUser(Uint8 type, int code, void *data1, void *data2);
         virtual void onLoop();
         virtual void onRender();
+
+        Mix_Chunk *hit1;
+        Mix_Chunk *hit2;
+        Mix_Chunk *hit3;
+        Mix_Chunk *goal;
 };
 
 #endif // MATCH_H

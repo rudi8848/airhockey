@@ -1,7 +1,7 @@
 #ifndef APP_H
 #define APP_H
 
-//#include "Room.hpp"
+#include "defines.hpp"
 #include "Menu.hpp"
 #include "Match.hpp"
 #include "Game.hpp"
@@ -16,6 +16,8 @@ class App
         virtual ~App();
 
         e_state onExecute();
+        Mix_Chunk *menu;
+
 
     private:
 
@@ -31,6 +33,7 @@ class App
 
         void onStart();
         bool onInit();
+        bool LoadMedia();
         void onLoop();
         void onRender();
         void onQuit();

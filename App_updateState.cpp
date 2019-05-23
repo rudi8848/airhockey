@@ -3,11 +3,12 @@
 
 void App::updateState()
 {
-//std::cerr << __PRETTY_FUNCTION__<< std::endl;
     if (next_state != STATE_NULL)
     {
         delete room;
         room = nullptr;
+
+        Mix_PlayChannel(-1, menu, 0);
 
         switch (next_state)
         {
@@ -35,5 +36,6 @@ void App::updateState()
         }
         id_state = next_state;
         next_state = STATE_NULL;
+
     }
 }

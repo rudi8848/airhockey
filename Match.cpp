@@ -13,11 +13,37 @@ Match::Match(SDL_Surface* scr, int rwidth, int rheight) : Room(scr, rwidth, rhei
     text += game->getScore();
     game->init(getScreen());
 
+    hit1 = Mix_LoadWAV("Sounds/AirHockey_MalletHitPuck01.wav");
+    hit2 = Mix_LoadWAV("Sounds/AirHockey_MalletHitPuck03.wav");
+    hit3 = Mix_LoadWAV("Sounds/AirHockey_PuckHitSide02.wav");
+    goal = Mix_LoadWAV("Sounds/AirHockey_GoalScore01.wav");
+
+if (!hit1 || !hit2 || !hit3 || !goal)
+    throw InitError("Music load error!");
 }
 
 Match::~Match()
 {
-
+    if (hit1)
+    {
+        Mix_FreeChunk(hit1);
+        hit1 = nullptr;
+    }
+    if (hit2)
+    {
+        Mix_FreeChunk(hit2);
+        hit2 = nullptr;
+    }
+    if (hit3)
+    {
+        Mix_FreeChunk(hit3);
+        hit3 = nullptr;
+    }
+    if (goal)
+    {
+        Mix_FreeChunk(goal);
+        goal = nullptr;
+    }
 }
 
 int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
@@ -62,16 +88,21 @@ void Match::onLoop()
 
     if ( timer % 3 == 0)
     {
-            game->enemy->move(0, 0, 0);
+     if (game->checkHCollision(game->puck, game->player) == true)
+        {
+            Mix_PlayChannel(-1, hit1, 0);
+            game->puck->xVel = - game->puck->xVel;
             game->puck->move(0, 0, 0);
-        if (game->checkCollision(game->puck, game->player) == true)
-        {
-            game->puck->xVel = - game->puck->xVel;
         }
-        if (game->checkCollision(game->puck, game->enemy) == true)
+        if (game->checkHCollision(game->puck, game->enemy) == true)
         {
+            Mix_PlayChannel(-1, hit2, 0);
             game->puck->xVel = - game->puck->xVel;
-    }
+            game->puck->move(0, 0, 0);
+        }
+        game->enemy->move(0, 0, 0);
+        game->puck->move(0, 0, 0);
+
     }
 }
 

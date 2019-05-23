@@ -37,5 +37,29 @@ bool App::onInit()
    {
         return false;
     }
+    menu = Mix_LoadWAV("Sounds/Menu_Backup05.wav");
+    if (!menu)
+        return false;
+    return true;
+}
+
+bool    App::LoadMedia()
+{
+/*    menu = Mix_LoadWAV("Sounds/Menu_Backup05.wav");
+    if (!menu)
+        return false;
+    hit1 = Mix_LoadWAV("Sounds/AirHockey_MalletHitPuck01.wav");
+    if (!hit1)
+        return false;
+    hit2 = Mix_LoadWAV("Sounds/AirHockey_MalletHitPuck03.wav");
+    if (!hit2)
+        return false;
+    hit3 = Mix_LoadWAV("Sounds/AirHockey_PuckHitSide02.wav");
+    if (!hit3)
+        return false;
+    goal = Mix_LoadWAV("Sounds/AirHockey_GoalScore01.wav");
+    if (!goal)
+        return false;
+  */
     return true;
 }

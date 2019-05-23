@@ -5,8 +5,8 @@ int main(int argc, char *argv[])
 
     try
     {
-        App game;
-        return game.onExecute();
+        App app;
+        return app.onExecute();
     }
     catch (const InitError &err)
     {

@@ -8,11 +8,17 @@ App::App()
     screen = nullptr;
     room = nullptr;
     font = nullptr;
+    menu = nullptr;
 }
 
 App::~App()
 {
 
+    if (menu)
+    {
+        Mix_FreeChunk(menu);
+        menu = nullptr;
+    }
 }
 
 e_state App::onExecute()
@@ -25,7 +31,7 @@ e_state App::onExecute()
 
     while (id_state != EXIT)
     {
-       // std::cerr << __PRETTY_FUNCTION__ << std::endl;
+
         onLoop();
         onRender();
 
@@ -36,5 +42,4 @@ e_state App::onExecute()
     onQuit();
     return STATE_NULL;
 }
-
 

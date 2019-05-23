@@ -7,12 +7,13 @@
 #define WINDOW_HEIGHT   480
 #define WINDOW_CAPTION  "Air Hockey"
 
-#define STRIKER_WIDTH	96
+#define STRIKER_WIDTH	90
 #define BORDER_WIDTH	10
-#define PUCK_WIDTH	70
+#define PUCK_WIDTH	65
 
 #include <stdlib.h>
 #include <ctime>
+#include <SDL_mixer.h>
 
 typedef enum
 {
@@ -26,5 +27,11 @@ typedef enum
 
 int     getRandomNum(int low, int high);
 bool    pointInRect(int x, int y, int recX, int recY, int recW);
-
+/*
+Mix_Chunk *menu;
+Mix_Chunk *hit1;
+Mix_Chunk *hit2;
+Mix_Chunk *hit3;
+Mix_Chunk *goal;
+*/
 #endif // DEFINES_H

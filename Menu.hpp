@@ -13,8 +13,6 @@ class Menu: public Room
         virtual void onLoop();
         virtual void onRender();
 
-    private:
-
 };
 
 #endif // MENU_H

@@ -32,7 +32,7 @@ void    Game::draw(SDL_Surface *screen)
 {
 
 }
-bool Game::checkCollision(Player *p1, Player *p2)
+bool Game::checkHCollision(Player *p1, Player *p2)
 {
     if (pointInRect(p1->getX(), p1->getY(), p2->getX(), p2->getY(), p2->getW()) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY(), p2->getX(), p2->getY(), p2->getW()) == true ||

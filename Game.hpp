@@ -19,7 +19,7 @@ class Game
         void init(SDL_Surface *screen);
         void draw(SDL_Surface *screen);
 
-        bool checkCollision(Player *p1, Player *p2);
+        bool checkHCollision(Player *p1, Player *p2);
         bool isOver();
 
         Player  *player;
