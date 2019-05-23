@@ -14,3 +14,13 @@ bool    pointInRect(int x, int y, int recX, int recY, int recW)
         return true;
     return false;
 }
+
+bool    pointInRect(int x, int y, int recX, int recY, int recW, int recH)
+{
+    if (x > recX &&
+    y > recY &&
+    x < recX + recW &&
+    y < recY + recH)
+        return true;
+    return false;
+}

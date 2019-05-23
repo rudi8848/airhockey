@@ -18,7 +18,7 @@ public:
 	int getX() const;
 	int getY() const;
 	int getW() const;
-	unsigned getScore() const;
+	unsigned & getScore();
 	void setX(int x);
 	void setY(int y);
 	bool init(SDL_Surface *where);

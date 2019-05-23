@@ -22,6 +22,8 @@ class Game
         bool checkHCollision(Player *p1, Player *p2);
         bool checkVCollision(Player *p1, Player *p2);
         bool checkDCollision(Player *p1, Player *p2);
+        bool inPlayerGate();
+        bool inEnemyGate();
         bool isOver();
 
         Player  *player;

@@ -95,13 +95,13 @@ void Match::onLoop()
             game->puck->xVel = - game->puck->xVel;
             game->puck->move(hit3);
         }
-        if (game->checkVCollision(game->player, game->puck) == true)
+        else if (game->checkVCollision(game->puck, game->player) == true)
         {
             Mix_PlayChannel(-1, hit1, 0);
             game->puck->yVel = - game->puck->yVel;
             game->puck->move(hit3);
         }
-        if (game->checkDCollision(game->player, game->puck) == true)
+        else if (game->checkDCollision(game->puck, game->player) == true)
         {
             Mix_PlayChannel(-1, hit1, 0);
             game->puck->xVel = - game->puck->xVel;
@@ -115,13 +115,13 @@ void Match::onLoop()
             game->puck->xVel = - game->puck->xVel;
             game->puck->move(hit3);
         }
-        if (game->checkVCollision(game->enemy, game->puck) == true)
+        else if (game->checkVCollision(game->puck, game->enemy) == true)
         {
             Mix_PlayChannel(-1, hit2, 0);
             game->puck->yVel = - game->puck->yVel;
             game->puck->move(hit3);
         }
-        if (game->checkVCollision(game->enemy, game->puck) == true)
+        else if (game->checkVCollision(game->puck, game->enemy) == true)
         {
             Mix_PlayChannel(-1, hit2, 0);
             game->puck->xVel = - game->puck->xVel;
@@ -130,6 +130,19 @@ void Match::onLoop()
         }
         game->enemy->move(0, 0, 0);
         game->puck->move(hit3);
+
+        if (game->inPlayerGate())
+        {
+            Mix_PlayChannel(-1, goal, 0);
+            game->enemy->getScore() += 1;
+            game->puck->init(getScreen());
+        }
+        if (game->inEnemyGate())
+        {
+            Mix_PlayChannel(-1, goal, 0);
+            game->player->getScore() += 1;
+            game->puck->init(getScreen());
+        }
 
     }
 }

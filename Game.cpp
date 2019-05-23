@@ -142,7 +142,42 @@ bool Game::checkDCollision(Player *p1, Player *p2)
         return true;
     }
 
+    return false;
+}
 
+bool Game::inPlayerGate()
+{
+    int p2x = 0;
+    int p2y = 180;
+    int p2w = 80;
+    int p2h = 100;
+
+    if (pointInRect(puck->getX(), puck->getY(), p2x, p2y, p2w, p2h) == true ||
+    pointInRect(puck->getX() + puck->getW(), puck->getY(), p2x, p2y, p2w, p2h) == true ||
+    pointInRect(puck->getX(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true ||
+    pointInRect(puck->getX() + puck->getW(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true)
+    {
+        std::cerr << "goal" << std::endl;
+        return true;
+    }
+    return false;
+}
+
+bool Game::inEnemyGate()
+{
+    int p2x = WINDOW_WIDTH - 90;
+    int p2y = 180;
+    int p2w = 80;
+    int p2h = 100;
+
+    if (pointInRect(puck->getX(), puck->getY(), p2x, p2y, p2w, p2h) == true ||
+    pointInRect(puck->getX() + puck->getW(), puck->getY(), p2x, p2y, p2w, p2h) == true ||
+    pointInRect(puck->getX(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true ||
+    pointInRect(puck->getX() + puck->getW(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true)
+    {
+        std::cerr << "goal" << std::endl;
+        return true;
+    }
     return false;
 }
 
