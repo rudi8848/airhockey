@@ -7,6 +7,38 @@ void 	Enemy::initPosition()
 
 void 	Enemy::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
+    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+
+
+    int x = getX();
+    int y = getY();
+
+    x += xVel;
+    y += yVel;
+
+    if (x < WINDOW_WIDTH / 2 )
+    {
+       xVel = -xVel;
+       x = WINDOW_WIDTH / 2;
+    }
+    else if (x > WINDOW_WIDTH - BORDER_WIDTH - STRIKER_WIDTH)
+    {
+        x = WINDOW_WIDTH - BORDER_WIDTH - STRIKER_WIDTH;
+        xVel = -xVel;
+    }
+    if (y < BORDER_WIDTH)
+    {
+        yVel = -yVel;
+        y = BORDER_WIDTH;
+    }
+    else if (y > WINDOW_HEIGHT - BORDER_WIDTH - STRIKER_WIDTH)
+    {
+        y =  WINDOW_HEIGHT - BORDER_WIDTH - STRIKER_WIDTH;
+        yVel = -yVel;
+    }
+    setPosition(x, y);
+
+/*
 	int rand = std::rand() % 3;
 	if (rand == 0)
 		goLeft();
@@ -16,6 +48,7 @@ void 	Enemy::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 		goUp();
 	else
 		goDown();
+*/
 }
 
 void Enemy::goLeft()

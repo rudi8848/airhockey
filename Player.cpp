@@ -51,6 +51,7 @@ void Player::setY(int y)
 
 void Player::setPosition(int x, int y)
 {
+    std::cerr << getX() << " " << getY() << std::endl;
 	setX(x);
 	setY(y);
 }

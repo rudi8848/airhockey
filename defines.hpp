@@ -10,14 +10,19 @@
 #define STRIKER_WIDTH	96
 #define BORDER_WIDTH	10
 
+#include <stdlib.h>
+#include <ctime>
+
 typedef enum
 {
     STATE_NULL,
     MENU,
     PLAY,
-    PAUSED,
+    OVER,
     EXIT,
     STATES
 } e_state;
+
+int     getRandomNum(int low, int high);
 
 #endif // DEFINES_H

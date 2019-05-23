@@ -5,7 +5,7 @@ Game::Game()
 std::cerr << __PRETTY_FUNCTION__<< std::endl;
     player = new Player("Backgrounds/player1.bmp");
     enemy = new Enemy("Backgrounds/player2.bmp");
-
+    srand(time(NULL));
     scoreStr = "0 - 0";
 }
 
@@ -33,3 +33,5 @@ void    Game::draw(SDL_Surface *screen)
     Surface::drawSurface(enemy->getSurface(), screen, enemy->getX(), enemy->getY());
 
 }
+
+

@@ -26,7 +26,7 @@ void App::updateState()
 
                 break;
             }
-            case PAUSED:
+            case OVER:
             {
                 break;
             }
