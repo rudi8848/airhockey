@@ -15,6 +15,7 @@ class Puck : public Player
 	int getW() const;
 	virtual void 	initPosition();
 	virtual void 	move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
+	virtual void 	move(Mix_Chunk *chunk);
 
 	//virtual void goLeft();
 	//virtual void goRight();

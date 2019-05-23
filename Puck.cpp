@@ -10,8 +10,6 @@ int     Puck::getW() const
 }
 void 	Puck::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-    //std::cerr << __PRETTY_FUNCTION__ << std::endl;
-
 
     int x = getX();
     int y = getY();
@@ -36,6 +34,43 @@ void 	Puck::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
     }
     else if (y > WINDOW_HEIGHT - BORDER_WIDTH - PUCK_WIDTH)
     {
+        y =  WINDOW_HEIGHT - BORDER_WIDTH - PUCK_WIDTH;
+        yVel = -yVel;
+    }
+    setPosition(x, y);
+}
+
+
+void 	Puck::move(Mix_Chunk *chunk)
+{
+
+    int x = getX();
+    int y = getY();
+
+    x += xVel;
+    y += yVel;
+
+    if (x < BORDER_WIDTH )
+    {
+        Mix_PlayChannel(-1, chunk, 0);
+       xVel = -xVel;
+       x = BORDER_WIDTH;
+    }
+    else if (x > WINDOW_WIDTH - BORDER_WIDTH - PUCK_WIDTH)
+    {
+    Mix_PlayChannel(-1, chunk, 0);
+        x = WINDOW_WIDTH - BORDER_WIDTH - PUCK_WIDTH;
+        xVel = -xVel;
+    }
+    if (y < BORDER_WIDTH)
+    {
+    Mix_PlayChannel(-1, chunk, 0);
+        yVel = -yVel;
+        y = BORDER_WIDTH;
+    }
+    else if (y > WINDOW_HEIGHT - BORDER_WIDTH - PUCK_WIDTH)
+    {
+    Mix_PlayChannel(-1, chunk, 0);
         y =  WINDOW_HEIGHT - BORDER_WIDTH - PUCK_WIDTH;
         yVel = -yVel;
     }

@@ -92,16 +92,17 @@ void Match::onLoop()
         {
             Mix_PlayChannel(-1, hit1, 0);
             game->puck->xVel = - game->puck->xVel;
-            game->puck->move(0, 0, 0);
+            game->puck->move(hit3);
         }
         if (game->checkHCollision(game->puck, game->enemy) == true)
         {
             Mix_PlayChannel(-1, hit2, 0);
             game->puck->xVel = - game->puck->xVel;
-            game->puck->move(0, 0, 0);
+            game->puck->move(hit3);
         }
         game->enemy->move(0, 0, 0);
-        game->puck->move(0, 0, 0);
+        //game->puck->move(0, 0, 0);
+        game->puck->move(hit3);
 
     }
 }
