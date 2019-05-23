@@ -7,8 +7,8 @@ class Puck : public Player
 {
     public:
     Puck(std:: string const & filename) : Player(filename) {
-	xVel = getRandomNum(-10, 10);
-    yVel = getRandomNum(-10, 10);
+	xVel = getRandomNum(-2, 2);
+    yVel = getRandomNum(-2, 2);
     //std::cerr << xVel << " " << yVel << std::endl;
 	}
 	~Puck() {}

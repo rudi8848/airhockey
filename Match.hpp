@@ -11,6 +11,7 @@ class Match: public Room
         virtual ~Match();
 
         virtual int onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
+        virtual int onUser(Uint8 type, int code, void *data1, void *data2);
         virtual void onLoop();
         virtual void onRender();
 };

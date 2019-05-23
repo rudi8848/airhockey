@@ -34,11 +34,47 @@ void    Game::draw(SDL_Surface *screen)
 }
 void Game::checkCollisions()
 {
+    int plX = player->getX();
+    int plY = player->getY();
+
+    int pX = puck->getX();
+    int pY = puck->getY();
+
+    int eX = enemy->getX();
+    int eY = enemy->getY();
+
+
+    //---   puck with player
+     if ((pY >= plY && pY <= plY + STRIKER_WIDTH &&
+     pX >= plX && pX <= plX + STRIKER_WIDTH))
+     {
+        std::cerr << "COLLISION!!!" << std::endl;
+     }
+     else if (pY + PUCK_WIDTH >= plY && pY + PUCK_WIDTH < plY + STRIKER_WIDTH
+     && pX + PUCK_WIDTH >= plX && pX + PUCK_WIDTH <= plX + STRIKER_WIDTH)
+     {
+        std::cerr << "COLLISION!!!" << std::endl;
+     }
+    /*
+    if ((pY >= plY && pY < plY + STRIKER_WIDTH &&
+    pX >= oX && pX <= oX + STRIKER_WIDTH) ||
+    (pY + PUCK_WIDTH >= oY && pY + PUCK_WIDTH < oY + STRIKER_WIDTH &&
+    pX + PUCK_WIDTH >= oX && pX + PUCK_WIDTH <= oX + STRIKER_WIDTH) )
+*/
 
 }
 
 bool Game::isOver()
 {
-
+    if (player->getScore() == 7)
+    {
+        return true;
+    }
+    if (enemy->getScore() == 7)
+    {
+        return true;
+    }
+    return false;
 }
 
+int Game::timer = 0;

@@ -2,6 +2,7 @@
 #define EVENT_H
 
 #include <SDL.h>
+#include <iostream>
 
 class Event
 {
@@ -30,7 +31,7 @@ class Event
     virtual void onWindowSizeChanged(int winId, int data1, int data2);
     virtual void onMouseEnter();
     virtual void onMouseLeave();
-    virtual void onWindowExposed();
+    virtual int onWindowExposed();
     virtual void onWindowMove(int winId, int data1, int data2);
     virtual void onWindowMinimize(int winId, int data1, int data2);
     virtual void onWindowMaximize(int winId, int data1, int data2);
@@ -44,7 +45,7 @@ class Event
     virtual void onJoyHatMotion(Uint8 which, Uint8 hat, Uint8 button);
     virtual void onJoyButtonDown(Uint8 which, Uint8 button);
     virtual void onJoyButtonUp(Uint8 which, Uint8 button);
-    virtual void onUser(Uint8 type, int code, void *data1, void *data2);
+    virtual int onUser(Uint8 type, int code, void *data1, void *data2);
 
 
     virtual void move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);

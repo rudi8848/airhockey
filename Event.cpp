@@ -288,9 +288,10 @@ void Event::onMouseLeave()
 
 }
 
-void Event::onWindowExposed()
+int Event::onWindowExposed()
 {
-
+    std::cerr << __PRETTY_FUNCTION__<< std::endl;
+    return 0;
 }
 
 
@@ -349,7 +350,7 @@ void Event::onJoyButtonUp(Uint8 which, Uint8 button)
 
 }
 
-void Event::onUser(Uint8 type, int code, void *data1, void *data2)
+int Event::onUser(Uint8 type, int code, void *data1, void *data2)
 {
 
 }

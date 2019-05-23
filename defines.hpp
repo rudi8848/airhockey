@@ -25,5 +25,6 @@ typedef enum
 } e_state;
 
 int     getRandomNum(int low, int high);
+//bool    checkLeft(int oX, int oY, int pX, int pY);
 
 #endif // DEFINES_H

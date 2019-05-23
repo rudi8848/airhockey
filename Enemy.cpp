@@ -7,7 +7,7 @@ void 	Enemy::initPosition()
 
 void 	Enemy::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
-    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+    //std::cerr << __PRETTY_FUNCTION__ << std::endl;
 
 
     int x = getX();

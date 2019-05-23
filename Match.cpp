@@ -41,8 +41,7 @@ int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
         default:
         {
             game->player->move(sym, mod, scancode);
-            game->enemy->move(sym, mod, scancode);
-            game->puck->move(sym, mod, scancode);
+
             ret = STATE_NULL;
             break;
         }
@@ -50,13 +49,28 @@ int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
     return ret;
 }
 
+int     Match::onUser(Uint8 type, int code, void *data1, void *data2)
+{
+std::cerr << __PRETTY_FUNCTION__ << std::endl;
+
+    return STATE_NULL;
+}
+
 void Match::onLoop()
 {
-
+    if (game->timer %3 == 0)
+    {
+        game->enemy->move(0, 0, 0);
+        game->puck->move(0, 0, 0);
+    }
+    game->timer++;
+    if (game->timer == 1000)
+        game->timer = 0;
 }
 
 void Match::onRender()
 {
+
     Room::onRender();
 }
 

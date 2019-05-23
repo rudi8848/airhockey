@@ -25,6 +25,7 @@ class Game
         Player  *player;
         Enemy   *enemy;
         Puck    *puck;
+        static int timer;
  private:
         std::string scoreStr;
 };
