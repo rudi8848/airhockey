@@ -34,28 +34,116 @@ void    Game::draw(SDL_Surface *screen)
 }
 bool Game::checkHCollision(Player *p1, Player *p2)
 {
-    if (pointInRect(p1->getX(), p1->getY(), p2->getX(), p2->getY(), p2->getW()) == true ||
-    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2->getX(), p2->getY(), p2->getW()) == true ||
-    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2->getX(), p2->getY(), p2->getW()) == true ||
-    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2->getX(), p2->getY(), p2->getW()) == true)
+    /*
+            *  *  *
+            x  *  X
+            *  *  *
+    */
+    int p2x = p2->getX();
+    int p2w = p2->getW() / 3;
+    int p2y = p2->getY() + p2w;
+
+
+    if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "COLLISION!!!!" << std::endl;
+        std::cerr << "left" << std::endl;
         return true;
     }
+    p2x += 2*p2w;
+     if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "right" << std::endl;
+        return true;
+    }
+
     return false;
+}
 
-/*
-    int plX = player->getX();
-    int plY = player->getY();
+bool Game::checkVCollision(Player *p1, Player *p2)
+{
+    /*
+            *  X  *
+            *  *  *
+            *  X  *
+    */
+    int p2w = p2->getW() / 3;
+    int p2x = p2->getX() + p2w;
+    int p2y = p2->getY();
+     if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "top" << std::endl;
+        return true;
+    }
+    p2y += 2*p2w;
+    if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "bottom" << std::endl;
+        return true;
+    }
 
-    int pX = puck->getX();
-    int pY = puck->getY();
+    return false;
+}
 
-    int eX = enemy->getX();
-    int eY = enemy->getY();
-*/
+bool Game::checkDCollision(Player *p1, Player *p2)
+{
+    /*
+            x  *  x
+            *  *  *
+            x  *  x
+    */
+    int p2w = p2->getW() / 3;
+    int p2x = p2->getX();
+    int p2y = p2->getY();
+    if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "left top" << std::endl;
+        return true;
+    }
+    p2x += 2 * p2w;
+    if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "right top" << std::endl;
+        return true;
+    }
+    p2y += 2 * p2w;
+    if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "right bottom" << std::endl;
+        return true;
+    }
+    p2x = p2->getX();
+    if (pointInRect(p1->getX(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
+    {
+        std::cerr << "left bottom" << std::endl;
+        return true;
+    }
 
 
+    return false;
 }
 
 bool Game::isOver()

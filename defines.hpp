@@ -27,11 +27,5 @@ typedef enum
 
 int     getRandomNum(int low, int high);
 bool    pointInRect(int x, int y, int recX, int recY, int recW);
-/*
-Mix_Chunk *menu;
-Mix_Chunk *hit1;
-Mix_Chunk *hit2;
-Mix_Chunk *hit3;
-Mix_Chunk *goal;
-*/
+
 #endif // DEFINES_H

@@ -88,20 +88,47 @@ void Match::onLoop()
 
     if ( timer % 3 == 0)
     {
-     if (game->checkHCollision(game->puck, game->player) == true)
+        /*      with player    */
+        if (game->checkHCollision(game->puck, game->player) == true)
         {
             Mix_PlayChannel(-1, hit1, 0);
             game->puck->xVel = - game->puck->xVel;
             game->puck->move(hit3);
         }
+        if (game->checkVCollision(game->player, game->puck) == true)
+        {
+            Mix_PlayChannel(-1, hit1, 0);
+            game->puck->yVel = - game->puck->yVel;
+            game->puck->move(hit3);
+        }
+        if (game->checkDCollision(game->player, game->puck) == true)
+        {
+            Mix_PlayChannel(-1, hit1, 0);
+            game->puck->xVel = - game->puck->xVel;
+            game->puck->yVel = - game->puck->yVel;
+            game->puck->move(hit3);
+        }
+        /*      with enemy    */
         if (game->checkHCollision(game->puck, game->enemy) == true)
         {
             Mix_PlayChannel(-1, hit2, 0);
             game->puck->xVel = - game->puck->xVel;
             game->puck->move(hit3);
         }
+        if (game->checkVCollision(game->enemy, game->puck) == true)
+        {
+            Mix_PlayChannel(-1, hit2, 0);
+            game->puck->yVel = - game->puck->yVel;
+            game->puck->move(hit3);
+        }
+        if (game->checkVCollision(game->enemy, game->puck) == true)
+        {
+            Mix_PlayChannel(-1, hit2, 0);
+            game->puck->xVel = - game->puck->xVel;
+            game->puck->yVel = - game->puck->yVel;
+            game->puck->move(hit3);
+        }
         game->enemy->move(0, 0, 0);
-        //game->puck->move(0, 0, 0);
         game->puck->move(hit3);
 
     }
