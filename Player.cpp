@@ -135,7 +135,12 @@ void Player::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
     }
 }
 
-unsigned & Player::getScore()
+unsigned Player::getScore() const
 {
     return this->score;
+}
+
+void Player::addScore()
+{
+    this->score += 1;
 }

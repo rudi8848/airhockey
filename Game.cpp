@@ -12,7 +12,21 @@ std::cerr << __PRETTY_FUNCTION__<< std::endl;
 
 Game::~Game()
 {
-
+    if (player)
+    {
+        delete player;
+        player = nullptr;
+    }
+    if (enemy)
+    {
+        delete enemy;
+        enemy = nullptr;
+    }
+    if (puck)
+    {
+        delete puck;
+        puck = nullptr;
+    }
 }
 
 std::string & Game::getScore()

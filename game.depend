@@ -666,7 +666,7 @@
 1558591598 source:/home/rudi/airhockey/Surface.cpp
 	"Surface.hpp"
 
-1558635285 /home/rudi/airhockey/Player.hpp
+1558637456 /home/rudi/airhockey/Player.hpp
 	"Surface.hpp"
 	"InitError.hpp"
 	"defines.hpp"
@@ -687,7 +687,7 @@
 1558610634 source:/home/rudi/airhockey/Enemy.cpp
 	"Enemy.hpp"
 
-1558635309 source:/home/rudi/airhockey/Player.cpp
+1558637445 source:/home/rudi/airhockey/Player.cpp
 	"Player.hpp"
 
 1520175005 /usr/include/SDL2/SDL_image.h
@@ -735,7 +735,7 @@
 1558635549 source:/home/rudi/airhockey/Match.cpp
 	"Match.hpp"
 
-1558627192 /home/rudi/airhockey/Match.hpp
+1558639163 /home/rudi/airhockey/Match.hpp
 	"Room.hpp"
 	"Enemy.hpp"
 
@@ -745,7 +745,7 @@
 	<stdlib.h>
 	<ctime>
 
-1558634933 source:/home/rudi/airhockey/Game.cpp
+1558636526 source:/home/rudi/airhockey/Game.cpp
 	"Game.hpp"
 
 1558635940 source:/home/rudi/airhockey/functions.cpp

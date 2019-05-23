@@ -75,17 +75,12 @@ int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
     return ret;
 }
 
-int     Match::onUser(Uint8 type, int code, void *data1, void *data2)
-{
-std::cerr << __PRETTY_FUNCTION__ << std::endl;
-
-    return STATE_NULL;
-}
-
 void Match::onLoop()
 {
     uint32_t timer = SDL_GetTicks();
 
+    if (!game)
+        return;
     if ( timer % 3 == 0)
     {
         /*      with player    */
@@ -134,16 +129,28 @@ void Match::onLoop()
         if (game->inPlayerGate())
         {
             Mix_PlayChannel(-1, goal, 0);
-            game->enemy->getScore() += 1;
+            game->enemy->addScore();
             game->puck->init(getScreen());
+            this->text = "Score: " + game->getScore();
         }
         if (game->inEnemyGate())
         {
             Mix_PlayChannel(-1, goal, 0);
-            game->player->getScore() += 1;
+            game->player->addScore();
             game->puck->init(getScreen());
+            this->text = "Score: " + game->getScore();
         }
+        if (game->isOver())
+        {
+            if (game->player->getScore() < game->enemy->getScore())
+                this->text = "Fail ...";
+            else
+                this->text = "Victory!";
 
+            delete game;
+            game = nullptr;
+
+        }
     }
 }
 
@@ -152,4 +159,5 @@ void Match::onRender()
 
     Room::onRender();
 }
+
 
