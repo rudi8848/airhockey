@@ -25,6 +25,7 @@ e_state App::onExecute()
 
     while (id_state != EXIT)
     {
+       // std::cerr << __PRETTY_FUNCTION__ << std::endl;
         onLoop();
         onRender();
 

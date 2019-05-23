@@ -58,6 +58,8 @@
 		<Unit filename="Enemy.hpp" />
 		<Unit filename="Event.cpp" />
 		<Unit filename="Event.hpp" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.hpp" />
 		<Unit filename="InitError.cpp" />
 		<Unit filename="InitError.hpp" />
 		<Unit filename="Match.cpp" />

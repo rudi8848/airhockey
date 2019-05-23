@@ -2,10 +2,11 @@
 
 Room::Room(SDL_Surface* scr, int rwidth, int rheight)
 {
-
+std::cerr << __PRETTY_FUNCTION__<< std::endl;
     screen = scr;
     background = nullptr;
     music = nullptr;
+    game = nullptr;
     text = "";
 
     camera.x = 0;
@@ -65,12 +66,17 @@ int Room::onExit()
 
 void    Room::onLoop()
 {
-
+    std::cerr << __PRETTY_FUNCTION__ << std::endl;
 }
 
 void    Room::onRender()
 {
     Surface::drawSurface(background, screen, &camera, 0, 0);
+    if (game)
+    {
+        Surface::drawSurface(game->player->getSurface(), screen, &camera, game->player->getX(), game->player->getY());
+        Surface::drawSurface(game->enemy->getSurface(), screen, &camera, game->enemy->getX(), game->enemy->getY());
+    }
 }
 
 void    Room::move_camera(int lwidth)

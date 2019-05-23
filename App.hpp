@@ -1,9 +1,10 @@
 #ifndef APP_H
 #define APP_H
 
-#include "Room.hpp"
+//#include "Room.hpp"
 #include "Menu.hpp"
 #include "Match.hpp"
+#include "Game.hpp"
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 

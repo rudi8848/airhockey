@@ -72,7 +72,7 @@ void Surface::drawTextSurface(TTF_Font *font, SDL_Surface* screen, std::string c
 {
     if (!font || !screen)
         return;
-        std::cerr << __PRETTY_FUNCTION__ << std::endl;
+       // std::cerr << __PRETTY_FUNCTION__ << std::endl;
     SDL_Color color = {r, g, b};
 
     SDL_Rect rcDest;

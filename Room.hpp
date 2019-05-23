@@ -6,6 +6,7 @@
 #include "defines.hpp"
 #include "InitError.hpp"
 #include "Surface.hpp"
+#include "Game.hpp"
 
 class Room : Event
 {
@@ -34,6 +35,7 @@ class Room : Event
     int r;
     int g;
     int b;
+     Game *game;
     private:
         Mix_Music *music;
         SDL_Surface *screen;
@@ -41,6 +43,7 @@ class Room : Event
         SDL_Rect camera;
         int hspeed;
         int vspeed;
+
 };
 
 #endif

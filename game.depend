@@ -615,13 +615,13 @@
 1558361271 source:/home/user/airhockey/Event.cpp
 	"Event.hpp"
 
-1558552742 source:/home/rudi/airhockey/App.cpp
+1558591741 source:/home/rudi/airhockey/App.cpp
 	"App.hpp"
 
-1558551035 /home/rudi/airhockey/App.hpp
-	"Room.hpp"
+1558593247 /home/rudi/airhockey/App.hpp
 	"Menu.hpp"
 	"Match.hpp"
+	"Game.hpp"
 	<SDL_mixer.h>
 	<SDL_ttf.h>
 
@@ -649,7 +649,7 @@
 1558528768 source:/home/rudi/airhockey/App_onQuit.cpp
 	"App.hpp"
 
-1558552972 source:/home/rudi/airhockey/App_onRender.cpp
+1558596348 source:/home/rudi/airhockey/App_onRender.cpp
 	"App.hpp"
 
 1558524506 source:/home/rudi/airhockey/Event.cpp
@@ -658,10 +658,10 @@
 1558544076 source:/home/rudi/airhockey/main.cpp
 	"App.hpp"
 
-1558551825 source:/home/rudi/airhockey/Surface.cpp
+1558591598 source:/home/rudi/airhockey/Surface.cpp
 	"Surface.hpp"
 
-1558540340 /home/rudi/airhockey/Player.hpp
+1558596976 /home/rudi/airhockey/Player.hpp
 	"Surface.hpp"
 	"InitError.hpp"
 	"defines.hpp"
@@ -682,7 +682,7 @@
 1558515332 source:/home/rudi/airhockey/Enemy.cpp
 	"Enemy.hpp"
 
-1558541021 source:/home/rudi/airhockey/Player.cpp
+1558599583 source:/home/rudi/airhockey/Player.cpp
 	"Player.hpp"
 
 1520175005 /usr/include/SDL2/SDL_image.h
@@ -691,12 +691,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1558552844 /home/rudi/airhockey/Room.hpp
+1558599339 /home/rudi/airhockey/Room.hpp
 	<SDL_mixer.h>
 	"Event.hpp"
 	"defines.hpp"
 	"InitError.hpp"
 	"Surface.hpp"
+	"Game.hpp"
 
 1558521648 /home/rudi/airhockey/InitError.hpp
 	<SDL_error.h>
@@ -714,7 +715,7 @@
 1558552425 source:/home/rudi/airhockey/App_onStart.cpp
 	"App.hpp"
 
-1558551758 source:/home/rudi/airhockey/App_updateState.cpp
+1558599794 source:/home/rudi/airhockey/App_updateState.cpp
 	"App.hpp"
 
 1558530314 source:/home/rudi/airhockey/InitError.cpp
@@ -723,13 +724,19 @@
 1558553113 source:/home/rudi/airhockey/Menu.cpp
 	"Menu.hpp"
 
-1558552893 source:/home/rudi/airhockey/Room.cpp
+1558599271 source:/home/rudi/airhockey/Room.cpp
 	"Room.hpp"
 
-1558546284 source:/home/rudi/airhockey/Match.cpp
+1558599399 source:/home/rudi/airhockey/Match.cpp
 	"Match.hpp"
 
 1558540177 /home/rudi/airhockey/Match.hpp
 	"Room.hpp"
 	"Enemy.hpp"
+
+1558599435 /home/rudi/airhockey/Game.hpp
+	"Enemy.hpp"
+
+1558598951 source:/home/rudi/airhockey/Game.cpp
+	"Game.hpp"
 

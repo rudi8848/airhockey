@@ -17,6 +17,7 @@ public:
 	//std::pair <int,int>& getPosition();
 	int getX() const;
 	int getY() const;
+	unsigned getScore() const;
 	void setX(int x);
 	void setY(int y);
 	bool init(SDL_Surface *where);

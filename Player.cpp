@@ -2,7 +2,9 @@
 
 Player::Player(std::string const & filename)
 {
+std::cerr << __PRETTY_FUNCTION__<< std::endl;
 	_filename = filename;
+	score = 0;
 }
 
 Player::~Player()
@@ -13,12 +15,12 @@ Player::~Player()
 
 bool Player::init(SDL_Surface *where)
 {
-	//surface = Surface::loadSurface(_filename,where, 255, 0, 216);	// null check at App::onInit
-	surface = Surface::loadSurface(_filename,where);	// null check at App::onInit
+	surface = Surface::loadSurface(_filename,where, 128, 128, 128);	// null check at App::onInit
+	//surface = Surface::loadSurface(_filename,where);	// null check at App::onInit
 	if (!surface)
         throw InitError("Load Image Failed!");
 	initPosition();
-	score = 0;
+
 	return true;
 }
 
@@ -125,4 +127,9 @@ void Player::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
         	break;
         }
     }
+}
+
+unsigned Player::getScore() const
+{
+    return this->score;
 }
