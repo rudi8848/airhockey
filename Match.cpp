@@ -42,6 +42,7 @@ int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
         {
             game->player->move(sym, mod, scancode);
             game->enemy->move(sym, mod, scancode);
+            game->puck->move(sym, mod, scancode);
             ret = STATE_NULL;
             break;
         }

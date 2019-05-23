@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "Enemy.hpp"
+#include "Puck.hpp"
 #include <stdlib.h>
 #include <ctime>
 
@@ -18,8 +19,12 @@ class Game
         void init(SDL_Surface *screen);
         void draw(SDL_Surface *screen);
 
+        void checkCollisions();
+        bool isOver();
+
         Player  *player;
         Enemy   *enemy;
+        Puck    *puck;
  private:
         std::string scoreStr;
 };

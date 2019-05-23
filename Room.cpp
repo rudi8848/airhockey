@@ -76,6 +76,7 @@ void    Room::onRender()
     {
         Surface::drawSurface(game->player->getSurface(), screen, &camera, game->player->getX(), game->player->getY());
         Surface::drawSurface(game->enemy->getSurface(), screen, &camera, game->enemy->getX(), game->enemy->getY());
+        Surface::drawSurface(game->puck->getSurface(), screen, &camera, game->puck->getX(), game->puck->getY());
     }
 }
 

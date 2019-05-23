@@ -37,18 +37,6 @@ void 	Enemy::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
         yVel = -yVel;
     }
     setPosition(x, y);
-
-/*
-	int rand = std::rand() % 3;
-	if (rand == 0)
-		goLeft();
-	else if (rand == 1)
-		goRight();
-	else if (rand == 2)
-		goUp();
-	else
-		goDown();
-*/
 }
 
 void Enemy::goLeft()

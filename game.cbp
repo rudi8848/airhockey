@@ -68,11 +68,14 @@
 		<Unit filename="Menu.hpp" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.hpp" />
+		<Unit filename="Puck.cpp" />
+		<Unit filename="Puck.hpp" />
 		<Unit filename="Room.cpp" />
 		<Unit filename="Room.hpp" />
 		<Unit filename="Surface.cpp" />
 		<Unit filename="Surface.hpp" />
 		<Unit filename="defines.hpp" />
+		<Unit filename="functions.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

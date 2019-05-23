@@ -9,6 +9,7 @@
 
 #define STRIKER_WIDTH	96
 #define BORDER_WIDTH	10
+#define PUCK_WIDTH	70
 
 #include <stdlib.h>
 #include <ctime>
