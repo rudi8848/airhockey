@@ -39,6 +39,11 @@ int Player::getY() const
 	return _y;
 }
 
+int Player::getW() const
+{
+	return STRIKER_WIDTH;
+}
+
 void Player::setX(int x)
 {
 	_x = x;

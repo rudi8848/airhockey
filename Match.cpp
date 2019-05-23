@@ -58,14 +58,21 @@ std::cerr << __PRETTY_FUNCTION__ << std::endl;
 
 void Match::onLoop()
 {
-    if (game->timer %3 == 0)
+    uint32_t timer = SDL_GetTicks();
+
+    if ( timer % 3 == 0)
     {
-        game->enemy->move(0, 0, 0);
-        game->puck->move(0, 0, 0);
+            game->enemy->move(0, 0, 0);
+            game->puck->move(0, 0, 0);
+        if (game->checkCollision(game->puck, game->player) == true)
+        {
+            game->puck->xVel = - game->puck->xVel;
+        }
+        if (game->checkCollision(game->puck, game->enemy) == true)
+        {
+            game->puck->xVel = - game->puck->xVel;
     }
-    game->timer++;
-    if (game->timer == 1000)
-        game->timer = 0;
+    }
 }
 
 void Match::onRender()

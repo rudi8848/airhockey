@@ -19,13 +19,13 @@ class Game
         void init(SDL_Surface *screen);
         void draw(SDL_Surface *screen);
 
-        void checkCollisions();
+        bool checkCollision(Player *p1, Player *p2);
         bool isOver();
 
         Player  *player;
         Enemy   *enemy;
         Puck    *puck;
-        static int timer;
+
  private:
         std::string scoreStr;
 };

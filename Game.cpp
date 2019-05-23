@@ -32,8 +32,19 @@ void    Game::draw(SDL_Surface *screen)
 {
 
 }
-void Game::checkCollisions()
+bool Game::checkCollision(Player *p1, Player *p2)
 {
+    if (pointInRect(p1->getX(), p1->getY(), p2->getX(), p2->getY(), p2->getW()) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY(), p2->getX(), p2->getY(), p2->getW()) == true ||
+    pointInRect(p1->getX(), p1->getY() + p1->getW(), p2->getX(), p2->getY(), p2->getW()) == true ||
+    pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2->getX(), p2->getY(), p2->getW()) == true)
+    {
+        std::cerr << "COLLISION!!!!" << std::endl;
+        return true;
+    }
+    return false;
+
+/*
     int plX = player->getX();
     int plY = player->getY();
 
@@ -42,25 +53,8 @@ void Game::checkCollisions()
 
     int eX = enemy->getX();
     int eY = enemy->getY();
-
-
-    //---   puck with player
-     if ((pY >= plY && pY <= plY + STRIKER_WIDTH &&
-     pX >= plX && pX <= plX + STRIKER_WIDTH))
-     {
-        std::cerr << "COLLISION!!!" << std::endl;
-     }
-     else if (pY + PUCK_WIDTH >= plY && pY + PUCK_WIDTH < plY + STRIKER_WIDTH
-     && pX + PUCK_WIDTH >= plX && pX + PUCK_WIDTH <= plX + STRIKER_WIDTH)
-     {
-        std::cerr << "COLLISION!!!" << std::endl;
-     }
-    /*
-    if ((pY >= plY && pY < plY + STRIKER_WIDTH &&
-    pX >= oX && pX <= oX + STRIKER_WIDTH) ||
-    (pY + PUCK_WIDTH >= oY && pY + PUCK_WIDTH < oY + STRIKER_WIDTH &&
-    pX + PUCK_WIDTH >= oX && pX + PUCK_WIDTH <= oX + STRIKER_WIDTH) )
 */
+
 
 }
 
@@ -77,4 +71,3 @@ bool Game::isOver()
     return false;
 }
 
-int Game::timer = 0;

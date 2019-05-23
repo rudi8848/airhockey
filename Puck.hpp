@@ -12,6 +12,7 @@ class Puck : public Player
     //std::cerr << xVel << " " << yVel << std::endl;
 	}
 	~Puck() {}
+	int getW() const;
 	virtual void 	initPosition();
 	virtual void 	move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
 

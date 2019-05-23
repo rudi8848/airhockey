@@ -4,7 +4,10 @@ void 	Puck::initPosition()
 {
 	setPosition(WINDOW_WIDTH /2, WINDOW_HEIGHT /2 );
 }
-
+int     Puck::getW() const
+{
+	return PUCK_WIDTH;
+}
 void 	Puck::move(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 {
     //std::cerr << __PRETTY_FUNCTION__ << std::endl;
