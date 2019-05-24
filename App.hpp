@@ -33,7 +33,6 @@ class App
 
         void onStart();
         bool onInit();
-        bool LoadMedia();
         void onLoop();
         void onRender();
         void onQuit();

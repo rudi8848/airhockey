@@ -615,10 +615,10 @@
 1558361271 source:/home/user/airhockey/Event.cpp
 	"Event.hpp"
 
-1558627061 source:/home/rudi/airhockey/App.cpp
+1558680353 source:/home/rudi/airhockey/App.cpp
 	"App.hpp"
 
-1558627026 /home/rudi/airhockey/App.hpp
+1558680315 /home/rudi/airhockey/App.hpp
 	"defines.hpp"
 	"Menu.hpp"
 	"Match.hpp"
@@ -645,25 +645,25 @@
 1558501596 source:/home/rudi/airhockey/App_onEvent.cpp
 	"App.hpp"
 
-1558627094 source:/home/rudi/airhockey/App_onInit.cpp
+1558680295 source:/home/rudi/airhockey/App_onInit.cpp
 	"App.hpp"
 
 1558541931 source:/home/rudi/airhockey/App_onLoop.cpp
 	"App.hpp"
 
-1558528768 source:/home/rudi/airhockey/App_onQuit.cpp
+1558680373 source:/home/rudi/airhockey/App_onQuit.cpp
 	"App.hpp"
 
-1558596348 source:/home/rudi/airhockey/App_onRender.cpp
+1558680387 source:/home/rudi/airhockey/App_onRender.cpp
 	"App.hpp"
 
-1558611863 source:/home/rudi/airhockey/Event.cpp
+1558680476 source:/home/rudi/airhockey/Event.cpp
 	"Event.hpp"
 
-1558625391 source:/home/rudi/airhockey/main.cpp
+1558680546 source:/home/rudi/airhockey/main.cpp
 	"App.hpp"
 
-1558591598 source:/home/rudi/airhockey/Surface.cpp
+1558680717 source:/home/rudi/airhockey/Surface.cpp
 	"Surface.hpp"
 
 1558678626 /home/rudi/airhockey/Player.hpp
@@ -671,7 +671,7 @@
 	"InitError.hpp"
 	"defines.hpp"
 
-1558612830 /home/rudi/airhockey/Enemy.hpp
+1558680938 /home/rudi/airhockey/Enemy.hpp
 	"Player.hpp"
 	<stdlib.h>
 
@@ -684,10 +684,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1558610634 source:/home/rudi/airhockey/Enemy.cpp
+1558680451 source:/home/rudi/airhockey/Enemy.cpp
 	"Enemy.hpp"
 
-1558678563 source:/home/rudi/airhockey/Player.cpp
+1558680632 source:/home/rudi/airhockey/Player.cpp
 	"Player.hpp"
 
 1520175005 /usr/include/SDL2/SDL_image.h
@@ -717,7 +717,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1558552425 source:/home/rudi/airhockey/App_onStart.cpp
+1558680398 source:/home/rudi/airhockey/App_onStart.cpp
 	"App.hpp"
 
 1558627099 source:/home/rudi/airhockey/App_updateState.cpp
@@ -729,10 +729,10 @@
 1558623968 source:/home/rudi/airhockey/Menu.cpp
 	"Menu.hpp"
 
-1558677296 source:/home/rudi/airhockey/Room.cpp
+1558680687 source:/home/rudi/airhockey/Room.cpp
 	"Room.hpp"
 
-1558678137 source:/home/rudi/airhockey/Match.cpp
+1558680584 source:/home/rudi/airhockey/Match.cpp
 	"Match.hpp"
 
 1558639163 /home/rudi/airhockey/Match.hpp
@@ -745,13 +745,13 @@
 	<stdlib.h>
 	<ctime>
 
-1558677828 source:/home/rudi/airhockey/Game.cpp
+1558680196 source:/home/rudi/airhockey/Game.cpp
 	"Game.hpp"
 
 1558635940 source:/home/rudi/airhockey/functions.cpp
 	"defines.hpp"
 
-1558627795 /home/rudi/airhockey/Puck.hpp
+1558680916 /home/rudi/airhockey/Puck.hpp
 	"Player.hpp"
 
 1558627934 source:/home/rudi/airhockey/Puck.cpp

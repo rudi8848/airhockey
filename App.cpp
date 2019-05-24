@@ -14,11 +14,6 @@ App::App()
 App::~App()
 {
 
-    if (menu)
-    {
-        Mix_FreeChunk(menu);
-        menu = nullptr;
-    }
 }
 
 e_state App::onExecute()

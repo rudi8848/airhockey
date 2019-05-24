@@ -2,7 +2,7 @@
 
 Room::Room(SDL_Surface* scr, int rwidth, int rheight)
 {
-std::cerr << __PRETTY_FUNCTION__<< std::endl;
+
     screen = scr;
     background = nullptr;
     music = nullptr;

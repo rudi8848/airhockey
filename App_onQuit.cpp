@@ -14,7 +14,11 @@ void App::onQuit()
     SDL_DestroyWindow(window);
     window = nullptr;
 
-
+    if (menu)
+    {
+        Mix_FreeChunk(menu);
+        menu = nullptr;
+    }
 
     Mix_Quit();
     IMG_Quit();

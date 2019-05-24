@@ -9,7 +9,6 @@ class Puck : public Player
     Puck(std:: string const & filename) : Player(filename) {
 	xVel = getRandomNum(-2, 2);
     yVel = getRandomNum(-2, 2);
-    //std::cerr << xVel << " " << yVel << std::endl;
 	}
 	~Puck() {}
 	int getW() const;
@@ -17,8 +16,6 @@ class Puck : public Player
 	virtual void 	move(SDL_Keycode sym, Uint16 mod, Uint16 scancode);
 	virtual void 	move(Mix_Chunk *chunk);
 
-	//virtual void goLeft();
-	//virtual void goRight();
 
 	int xVel;
 	int yVel;

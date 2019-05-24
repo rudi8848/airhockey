@@ -63,7 +63,6 @@ bool Game::checkHCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "left" << std::endl;
         return true;
     }
     p2x += 2*p2w;
@@ -72,7 +71,6 @@ bool Game::checkHCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "right" << std::endl;
         return true;
     }
 
@@ -94,7 +92,6 @@ bool Game::checkVCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "top" << std::endl;
         return true;
     }
     p2y += 2*p2w;
@@ -103,7 +100,6 @@ bool Game::checkVCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "bottom" << std::endl;
         return true;
     }
 
@@ -125,7 +121,6 @@ bool Game::checkDCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "left top" << std::endl;
         return true;
     }
     p2x += 2 * p2w;
@@ -134,7 +129,6 @@ bool Game::checkDCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "right top" << std::endl;
         return true;
     }
     p2y += 2 * p2w;
@@ -143,7 +137,6 @@ bool Game::checkDCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "right bottom" << std::endl;
         return true;
     }
     p2x = p2->getX();
@@ -152,7 +145,6 @@ bool Game::checkDCollision(Player *p1, Player *p2)
     pointInRect(p1->getX(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true ||
     pointInRect(p1->getX() + p1->getW(), p1->getY() + p1->getW(), p2x, p2y, p2w) == true)
     {
-        std::cerr << "left bottom" << std::endl;
         return true;
     }
 
@@ -171,7 +163,6 @@ bool Game::inPlayerGate()
     pointInRect(puck->getX(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true ||
     pointInRect(puck->getX() + puck->getW(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true)
     {
-        std::cerr << "goal" << std::endl;
         return true;
     }
     return false;
@@ -189,7 +180,6 @@ bool Game::inEnemyGate()
     pointInRect(puck->getX(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true ||
     pointInRect(puck->getX() + puck->getW(), puck->getY() + puck->getW(), p2x, p2y, p2w, p2h) == true)
     {
-        std::cerr << "goal" << std::endl;
         return true;
     }
     return false;

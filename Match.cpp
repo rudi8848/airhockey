@@ -159,7 +159,6 @@ void Match::onLoop()
 
 void Match::onRender()
 {
-
     Room::onRender();
 }
 

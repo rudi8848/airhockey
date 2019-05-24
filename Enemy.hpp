@@ -11,7 +11,6 @@ public:
 	Enemy(std:: string const & filename) : Player(filename) {
 	xVel = getRandomNum(-1, 1);
     yVel = getRandomNum(-1, 1);
-    std::cerr << xVel << " " << yVel << std::endl;
 	}
 	~Enemy() {}
 	virtual void 	initPosition();

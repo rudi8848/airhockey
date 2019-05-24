@@ -290,7 +290,6 @@ void Event::onMouseLeave()
 
 int Event::onWindowExposed()
 {
-    std::cerr << __PRETTY_FUNCTION__<< std::endl;
     return 0;
 }
 
