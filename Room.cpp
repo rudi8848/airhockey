@@ -66,7 +66,6 @@ int Room::onExit()
 
 void    Room::onLoop()
 {
-    std::cerr << __PRETTY_FUNCTION__ << std::endl;
 
 }
 

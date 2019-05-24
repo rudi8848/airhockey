@@ -2,7 +2,6 @@
 
 Player::Player(std::string const & filename)
 {
-std::cerr << __PRETTY_FUNCTION__<< std::endl;
 	_filename = filename;
 	score = 0;
 }
@@ -15,8 +14,7 @@ Player::~Player()
 
 bool Player::init(SDL_Surface *where)
 {
-	surface = Surface::loadSurface(_filename,where, 128, 128, 128);	// null check at App::onInit
-	//surface = Surface::loadSurface(_filename,where);	// null check at App::onInit
+	surface = Surface::loadSurface(_filename,where, 128, 128, 128); // gray as transparent
 	if (!surface)
         throw InitError("Load Image Failed!");
 	initPosition();

@@ -10,11 +10,11 @@ class Player
 {
 public:
 	Player(std::string const & filename);
-	~Player();
+	virtual ~Player();
 
 	virtual void 	initPosition();
 	void 	setPosition(int x, int y);
-	//std::pair <int,int>& getPosition();
+
 	int getX() const;
 	int getY() const;
 	int getW() const;
@@ -31,7 +31,6 @@ public:
 	virtual void goRight();
 
 	private:
-		//std::pair <int, int> position;
 		int _x;
 		int _y;
 		SDL_Surface *surface;

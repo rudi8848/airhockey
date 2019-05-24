@@ -57,16 +57,10 @@ int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
             ret = EXIT;
             break;
         }
-        /*
-        case SDLK_SPACE:
-        {
-            ret = PLAY;
-            break;
-        }
-        */
         default:
         {
-            game->player->move(sym, mod, scancode);
+            if(game)
+                game->player->move(sym, mod, scancode);
 
             ret = STATE_NULL;
             break;
@@ -77,79 +71,88 @@ int Match::onKeyDown(SDL_Keycode sym, Uint16 mod, Uint16 scancode)
 
 void Match::onLoop()
 {
-    uint32_t timer = SDL_GetTicks();
+    uint32_t ticks = SDL_GetTicks();
 
     if (!game)
         return;
-    if ( timer % 3 == 0)
+    if ( ticks % 3 == 0)
     {
-        /*      with player    */
-        if (game->checkHCollision(game->puck, game->player) == true)
+        if (game->timer)
         {
-            Mix_PlayChannel(-1, hit1, 0);
-            game->puck->xVel = - game->puck->xVel;
-            game->puck->move(hit3);
+            --game->timer;
         }
-        else if (game->checkVCollision(game->puck, game->player) == true)
+        else
         {
-            Mix_PlayChannel(-1, hit1, 0);
-            game->puck->yVel = - game->puck->yVel;
+            /*      with player    */
+            if (game->checkHCollision(game->puck, game->player) == true)
+            {
+                Mix_PlayChannel(-1, hit1, 0);
+                game->puck->xVel = - game->puck->xVel;
+                game->puck->move(hit3);
+            }
+            else if (game->checkVCollision(game->puck, game->player) == true)
+            {
+                Mix_PlayChannel(-1, hit1, 0);
+                game->puck->yVel = - game->puck->yVel;
+                game->puck->move(hit3);
+            }
+            else if (game->checkDCollision(game->puck, game->player) == true)
+            {
+                Mix_PlayChannel(-1, hit1, 0);
+                game->puck->xVel = - game->puck->xVel;
+                game->puck->yVel = - game->puck->yVel;
+                game->puck->move(hit3);
+            }
+            /*      with enemy    */
+            if (game->checkHCollision(game->puck, game->enemy) == true)
+            {
+                Mix_PlayChannel(-1, hit2, 0);
+                game->puck->xVel = - game->puck->xVel;
+                game->puck->move(hit3);
+            }
+            else if (game->checkVCollision(game->puck, game->enemy) == true)
+            {
+                Mix_PlayChannel(-1, hit2, 0);
+                game->puck->yVel = - game->puck->yVel;
+                game->puck->move(hit3);
+            }
+            else if (game->checkVCollision(game->puck, game->enemy) == true)
+            {
+                Mix_PlayChannel(-1, hit2, 0);
+                game->puck->xVel = - game->puck->xVel;
+                game->puck->yVel = - game->puck->yVel;
+                game->puck->move(hit3);
+            }
+            game->enemy->move(0, 0, 0);
             game->puck->move(hit3);
-        }
-        else if (game->checkDCollision(game->puck, game->player) == true)
-        {
-            Mix_PlayChannel(-1, hit1, 0);
-            game->puck->xVel = - game->puck->xVel;
-            game->puck->yVel = - game->puck->yVel;
-            game->puck->move(hit3);
-        }
-        /*      with enemy    */
-        if (game->checkHCollision(game->puck, game->enemy) == true)
-        {
-            Mix_PlayChannel(-1, hit2, 0);
-            game->puck->xVel = - game->puck->xVel;
-            game->puck->move(hit3);
-        }
-        else if (game->checkVCollision(game->puck, game->enemy) == true)
-        {
-            Mix_PlayChannel(-1, hit2, 0);
-            game->puck->yVel = - game->puck->yVel;
-            game->puck->move(hit3);
-        }
-        else if (game->checkVCollision(game->puck, game->enemy) == true)
-        {
-            Mix_PlayChannel(-1, hit2, 0);
-            game->puck->xVel = - game->puck->xVel;
-            game->puck->yVel = - game->puck->yVel;
-            game->puck->move(hit3);
-        }
-        game->enemy->move(0, 0, 0);
-        game->puck->move(hit3);
 
-        if (game->inPlayerGate())
-        {
-            Mix_PlayChannel(-1, goal, 0);
-            game->enemy->addScore();
-            game->puck->init(getScreen());
-            this->text = "Score: " + game->getScore();
-        }
-        if (game->inEnemyGate())
-        {
-            Mix_PlayChannel(-1, goal, 0);
-            game->player->addScore();
-            game->puck->init(getScreen());
-            this->text = "Score: " + game->getScore();
-        }
-        if (game->isOver())
-        {
-            if (game->player->getScore() < game->enemy->getScore())
-                this->text = "Fail ...";
-            else
-                this->text = "Victory!";
+            if (game->inPlayerGate())
+            {
+                Mix_PlayChannel(-1, goal, 0);
+                game->enemy->addScore();
+                game->puck->init(getScreen());
+                this->text = "Score: " + game->getScore();
+                game->timer = 50;
+            }
+            if (game->inEnemyGate())
+            {
+                Mix_PlayChannel(-1, goal, 0);
+                game->player->addScore();
+                game->puck->init(getScreen());
+                this->text = "Score: " + game->getScore();
+                game->timer = 50;
+            }
+            if (game->isOver())
+            {
+                if (game->player->getScore() < game->enemy->getScore())
+                    this->text = "Fail ...";
+                else
+                    this->text = "Victory!";
 
-            delete game;
-            game = nullptr;
+                delete game;
+                game = nullptr;
 
+            }
         }
     }
 }

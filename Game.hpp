@@ -30,6 +30,8 @@ class Game
         Enemy   *enemy;
         Puck    *puck;
 
+        int     timer;
+
  private:
         std::string scoreStr;
 };

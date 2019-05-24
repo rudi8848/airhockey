@@ -2,11 +2,11 @@
 
 Game::Game()
 {
-std::cerr << __PRETTY_FUNCTION__<< std::endl;
     player = new Player("Backgrounds/player1.bmp");
     enemy = new Enemy("Backgrounds/player2.bmp");
     puck = new Puck("Backgrounds/puck.bmp");
     srand(time(NULL));
+    timer = 0;
     scoreStr = "0 - 0";
 }
 
