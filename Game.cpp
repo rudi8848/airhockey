@@ -6,7 +6,7 @@ Game::Game()
     enemy = new Enemy("Backgrounds/player2.bmp");
     puck = new Puck("Backgrounds/puck.bmp");
     srand(time(NULL));
-    timer = 0;
+    timer = 1;
     scoreStr = "0 - 0";
 }
 

@@ -2,7 +2,8 @@
 
 Match::Match(SDL_Surface* scr, int rwidth, int rheight) : Room(scr, rwidth, rheight)
 {
-    this->text = "Score: ";
+
+    this->text = "Use arrows to move!";
     this->text_x = 140;
     this->text_y = 20;
     this->r = 255;
@@ -10,7 +11,6 @@ Match::Match(SDL_Surface* scr, int rwidth, int rheight) : Room(scr, rwidth, rhei
     this->b = 0;
 
     game = new Game();
-    text += game->getScore();
     game->init(getScreen());
 
     hit1 = Mix_LoadWAV("Sounds/AirHockey_MalletHitPuck01.wav");
@@ -24,6 +24,11 @@ if (!hit1 || !hit2 || !hit3 || !goal)
 
 Match::~Match()
 {
+    if (game)
+    {
+        delete game;
+        game = nullptr;
+    }
     if (hit1)
     {
         Mix_FreeChunk(hit1);
@@ -134,7 +139,7 @@ void Match::onLoop()
                 this->text = "Score: " + game->getScore();
                 game->timer = 50;
             }
-            if (game->inEnemyGate())
+            else if (game->inEnemyGate())
             {
                 Mix_PlayChannel(-1, goal, 0);
                 game->player->addScore();
@@ -145,9 +150,9 @@ void Match::onLoop()
             if (game->isOver())
             {
                 if (game->player->getScore() < game->enemy->getScore())
-                    this->text = "Fail ...";
+                    this->text = "Fail ... Esc to exit";
                 else
-                    this->text = "Victory!";
+                    this->text = "Victory!  Esc to exit";
 
                 delete game;
                 game = nullptr;

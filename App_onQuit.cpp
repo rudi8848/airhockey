@@ -19,6 +19,11 @@ void App::onQuit()
         Mix_FreeChunk(menu);
         menu = nullptr;
     }
+    if (font)
+    {
+        TTF_CloseFont(font);
+        font = nullptr;
+    }
 
     Mix_Quit();
     IMG_Quit();

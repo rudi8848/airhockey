@@ -7,3 +7,4 @@ game
 game.cbp
 game.depend
 game.layout
+*.o
