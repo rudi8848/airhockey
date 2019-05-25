@@ -41,13 +41,13 @@ OBJS	=	$(SRCS:.cpp=.o)
 #CFLAGS	=	-lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
 
 #	for Mac Os
-CFLAGS	=	-L/Users/gvynogra/.brew/Cellar/sdl2/2.0.9_1/lib -L/Users/gvynogra/.brew/Cellar/sdl2_mixer/2.0.4/lib -L/Users/gvynogra/.brew/Cellar/sdl2_image/2.0.4/lib -L/Users/gvynogra/.brew/Cellar/sdl2_ttf/2.0.15/lib -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
+CFLAGS	=	-L${HOME}/.brew/Cellar/sdl2/2.0.9_1/lib -L${HOME}/.brew/Cellar/sdl2_mixer/2.0.4/lib -L${HOME}/.brew/Cellar/sdl2_image/2.0.4/lib -L${HOME}/.brew/Cellar/sdl2_ttf/2.0.15/lib -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
 
 #	for Linux
 #INCL 	=	-I/usr/include/SDL2
 
 #	for Mac Os
-INCL 	=	-I/Users/gvynogra/.brew/Cellar/sdl2/2.0.9_1/include/sdl2 -I/Users/gvynogra/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2 -I/Users/gvynogra/.brew/Cellar/sdl2_mixer/2.0.4/include/SDL2 -I/Users/gvynogra/.brew/Cellar/sdl2_image/2.0.4/include/SDL2
+INCL 	=	-I${HOME}/.brew/Cellar/sdl2/2.0.9_1/include/sdl2 -I${HOME}/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2 -I${HOME}/.brew/Cellar/sdl2_mixer/2.0.4/include/SDL2 -I${HOME}/.brew/Cellar/sdl2_image/2.0.4/include/SDL2
 
 
 all:		$(NAME)
@@ -74,4 +74,4 @@ re:			fclean all
 #	g++ -o game -Wall -Wextra -Werror *.cpp -I/usr/include/SDL2 -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
 	#g++ -std=c++11 -o game *.cpp  -I/Users/gvynogra/.brew/Cellar/sdl2/2.0.9_1/include/sdl2 -L/Users/gvynogra/.brew/Cellar/sdl2/2.0.9_1/lib -lsdl2 -I/Users/gvynogra/.brew/Cellar/sdl2_mixer/2.0.4/include/sdl2 -L//Users/gvynogra/.brew/Cellar/sdl2_mixer/2.0.4/lib -lSDL2_mixer
 # to find where brew installed lib : brew info sdl2
-# brew install sdl2_mixer
+# brew install sdl2, sdl2_mixer, sdl2_image, sdl2_ttf 
