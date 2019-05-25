@@ -36,9 +36,11 @@ CC		=	g++
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-CFLAGS	=	-lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
+#CFLAGS	=	-lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
+CFLAGS	=	-L/Users/gvynogra/.brew/Cellar/sdl2/2.0.9_1/lib -L/Users/gvynogra/.brew/Cellar/sdl2_mixer/2.0.4/lib -L/Users/gvynogra/.brew/Cellar/sdl2_image/2.0.4/lib -L/Users/gvynogra/.brew/Cellar/sdl2_ttf/2.0.15/lib -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
 
-INCL 	=	-I/usr/include/SDL2
+#INCL 	=	-I/usr/include/SDL2
+INCL 	=	-I/Users/gvynogra/.brew/Cellar/sdl2/2.0.9_1/include/sdl2 -I/Users/gvynogra/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2 -I/Users/gvynogra/.brew/Cellar/sdl2_mixer/2.0.4/include/SDL2 -I/Users/gvynogra/.brew/Cellar/sdl2_image/2.0.4/include/SDL2
 
 
 all:		$(NAME)
@@ -47,7 +49,7 @@ $(NAME):	$(OBJS) $(HDRS)
 			$(CC) -o $(NAME) $(OBJS) $(INCL) $(CFLAGS)
 
 %.o:		%.cpp
-			$(CC) $(CFLAGS) $(INCL) -o $@ -c $<
+			$(CC)  $(INCL) $(CFLAGS) -o $@ -c $<
 
 clean:
 			/bin/rm -f $(OBJS)

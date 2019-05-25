@@ -14,7 +14,8 @@ Player::~Player()
 
 bool Player::init(SDL_Surface *where)
 {
-	surface = Surface::loadSurface(_filename,where, 128, 128, 128); // gray as transparent
+	surface = Surface::loadSurface(_filename,where); // gray as transparent
+    //surface = Surface::loadSurface(_filename,where, 128, 128, 128); // gray as transparent
 	if (!surface)
         throw InitError("Load Image Failed!");
 	initPosition();

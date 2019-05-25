@@ -10,7 +10,7 @@ InitError::InitError(const std::string &msg) : exception(), mes(msg)
 
 }
 
-InitError::~InitError()
+InitError::~InitError() throw()
 {
 
 }
