@@ -2,12 +2,12 @@
 
 Game::Game()
 {
-    //player = new Player("Backgrounds/player1.bmp");
-    player = new Player("Backgrounds/player1.png");
-    //enemy = new Enemy("Backgrounds/player2.bmp");
-    enemy = new Enemy("Backgrounds/player2.png");
-    //puck = new Puck("Backgrounds/puck.bmp");
-    puck = new Puck("Backgrounds/puck.png");
+    player = new Player("Backgrounds/player1.bmp");
+    //player = new Player("Backgrounds/player1.png");
+    enemy = new Enemy("Backgrounds/player2.bmp");
+    //enemy = new Enemy("Backgrounds/player2.png");
+    puck = new Puck("Backgrounds/puck.bmp");
+    //puck = new Puck("Backgrounds/puck.png");
     srand(time(NULL));
     timer = 1;
     scoreStr = "0 - 0";
