@@ -121,7 +121,7 @@ void Match::onLoop()
                 game->puck->yVel = - game->puck->yVel;
                 game->puck->move(hit3);
             }
-            else if (game->checkVCollision(game->puck, game->enemy) == true)
+            else if (game->checkDCollision(game->puck, game->enemy) == true)
             {
                 Mix_PlayChannel(-1, hit2, 0);
                 game->puck->xVel = - game->puck->xVel;
