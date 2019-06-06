@@ -1,6 +1,14 @@
-sudo apt-get install g++
-sudo apt-get install libsdl2-dev
-sudo apt-get install libsdl2-mixer-dev
-sudo apt-get install libsdl2-image-dev
-sudo apt-get install libsdl2-ttf-dev
+Computer version of Air hockey - a game where two players play against each other 
+on a low-friction table. Air hockey requires an air-hockey table, 
+two player-held strikers, and a puck. 
 
+
+To install on Ubuntu, Debian run:
+
+    sudo apt-get install g++
+    sudo apt-get install libsdl2-dev
+    sudo apt-get install libsdl2-mixer-dev
+    sudo apt-get install libsdl2-image-dev
+    sudo apt-get install libsdl2-ttf-dev
+
+Then run "make" inside of game directory.
